@@ -1,0 +1,52 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --ink: #071018;
+  --navy: #0c1f2e;
+  --navy-soft: #152a3d;
+  --teal: #0d9488;
+  --cyan: #2dd4bf;
+  --cyan-glow: #5eead4;
+  --mist: #ecfeff;
+  --sand: #d4a574;
+  --sand-soft: #f5ebe0;
+  --white: #ffffff;
+  --muted: #5a6d7c;
+  --border: rgba(7, 16, 24, 0.08);
+  --shadow: 0 28px 56px rgba(7, 16, 24, 0.14);
+  --radius: 16px;
+  --font: 'DM Sans', system-ui, sans-serif;
+  --display: 'Syne', var(--font);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font);
+  font-size: 17px;
+  line-height: 1.55;
+  color: var(--muted);
+  background: var(--white);
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+}
