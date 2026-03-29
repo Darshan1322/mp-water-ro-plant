@@ -1243,6 +1243,18 @@
   text-decoration: underline;
 }
 
+.footer-social__ig {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+}
+
+.footer-social__ig svg {
+  flex-shrink: 0;
+  opacity: 0.95;
+}
+
 .footer-copy {
   width: 100%;
   margin-top: 28px;
