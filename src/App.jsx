@@ -1,8 +1,6 @@
 import { useState } from 'react'
 import './App.css'
-
-/** Works on GitHub Pages (/repo/) and on root domains (/) */
-const LOGO_SRC = `${import.meta.env.BASE_URL}logo.png`
+import logoPng from './assets/logo.png'
 
 const PHONE_DISPLAY = '95385 86907'
 const PHONE_TEL = 'tel:+919538586907'
@@ -182,7 +180,7 @@ function App() {
       <header className="site-header">
         <div className="site-header__inner">
           <a href="#home" className="brand" onClick={closeMenu}>
-            <img src={LOGO_SRC} alt="MP Water RO Plant logo" width="96" height="96" />
+            <img src={logoPng} alt="MP Water RO Plant logo" width="96" height="96" />
             <div className="brand-text">
               <strong>MP WATER RO PLANT</strong>
               <span>Purified · Pure health</span>
@@ -248,7 +246,7 @@ function App() {
               <div className="hero__visual-stack">
                 <div className="hero__logo-frame">
                   <div className="hero__logo-inner">
-                    <img src={LOGO_SRC} alt="" width="360" height="280" />
+                    <img src={logoPng} alt="" width="360" height="280" />
                   </div>
                 </div>
                 <a className="hero__slot-note" href={WHATSAPP} target="_blank" rel="noreferrer">
