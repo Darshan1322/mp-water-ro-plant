@@ -119,6 +119,64 @@ const faqItems = [
   },
 ]
 
+/** Change to empty string when you are fully live */
+const LAUNCH_WINDOW_LABEL = 'about 1 week'
+
+function LaunchSoonBanner() {
+  return (
+    <div className="launch-soon" role="status" aria-live="polite">
+      <div className="launch-soon__inner">
+        <p className="launch-soon__ribbon">
+          <span className="launch-soon__rocket" aria-hidden>
+            🚀
+          </span>
+          Opening soon — we&apos;re starting up
+        </p>
+
+        <div className="launch-soon__icons">
+          <div className="launch-soon__chip">
+            <div className="launch-soon__chip-icon" aria-hidden>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round">
+                <rect x="3" y="5" width="18" height="16" rx="2" />
+                <path d="M3 10h18M8 3v4M16 3v4" />
+                <circle cx="12" cy="15" r="1" fill="currentColor" stroke="none" />
+              </svg>
+            </div>
+            <strong>{LAUNCH_WINDOW_LABEL}</strong>
+            <span>Target go-live</span>
+          </div>
+          <div className="launch-soon__chip">
+            <div className="launch-soon__chip-icon" aria-hidden>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round">
+                <path d="M12 3c-4 6-7 8-7 12a7 7 0 0014 0c0-4-3-6-7-12z" />
+              </svg>
+            </div>
+            <strong>RO plant</strong>
+            <span>Final checks</span>
+          </div>
+          <div className="launch-soon__chip">
+            <div className="launch-soon__chip-icon" aria-hidden>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round">
+                <path d="M3 11h12v8H3v-8zM15 11h3l3 3v5h-3" />
+                <circle cx="7.5" cy="19" r="1.75" fill="currentColor" stroke="none" />
+                <circle cx="18" cy="19" r="1.75" fill="currentColor" stroke="none" />
+              </svg>
+            </div>
+            <strong>20L routes</strong>
+            <span>Homes &amp; shops</span>
+          </div>
+        </div>
+
+        <p className="launch-soon__text">
+          Full delivery across Mandya city and nearby villages begins in <strong>{LAUNCH_WINDOW_LABEL}</strong>. You can
+          still message us on WhatsApp to <strong>save your place</strong> or ask questions — we&apos;ll confirm slots
+          as we open.
+        </p>
+      </div>
+    </div>
+  )
+}
+
 function WaveDivider({ flip, toNavy }) {
   return (
     <div
@@ -213,9 +271,12 @@ function App() {
       <main>
         <section className="hero" id="home">
           <div className="hero__mesh" aria-hidden />
+          <LaunchSoonBanner />
           <div className="hero__grid">
             <div className="hero__copy">
-              <p className="hero__eyebrow">Mandya · 20 litre cans · RO plant</p>
+              <p className="hero__eyebrow">
+                Mandya · 20 litre cans · RO plant · <span className="hero__eyebrow-soon">Starting soon</span>
+              </p>
               <h1>
                 Water that carries
                 <br />
@@ -250,7 +311,7 @@ function App() {
                   </div>
                 </div>
                 <a className="hero__slot-note" href={WHATSAPP} target="_blank" rel="noreferrer">
-                  Same-day slots when routes allow — ask on WhatsApp.
+                  Opening in ~1 week — WhatsApp us to get on the delivery list.
                 </a>
               </div>
             </div>
