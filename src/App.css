@@ -74,6 +74,10 @@
   font-size: 0.82rem;
   font-weight: 800;
   letter-spacing: 0.06em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 260px;
 }
 
 .brand-text span {
@@ -105,9 +109,27 @@
   color: var(--teal);
 }
 
+.lang-toggle {
+  font: inherit;
+  border: 1px solid var(--border);
+  background: var(--white);
+  color: var(--navy);
+  padding: 8px 12px;
+  border-radius: 999px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.lang-toggle:hover {
+  background: var(--mist);
+  border-color: rgba(45, 212, 191, 0.35);
+}
+
 .nav-cta {
   background: linear-gradient(135deg, var(--teal), var(--navy)) !important;
   color: var(--white) !important;
+  white-space: nowrap;
 }
 
 .nav-cta:hover {
@@ -315,6 +337,7 @@
   font-size: 0.95rem;
   margin-bottom: 4px;
   color: var(--white);
+  white-space: nowrap;
 }
 
 .launch-soon__chip span {
