@@ -16,13 +16,13 @@ const MAPS_URL = 'https://share.google/JjCXtOMCgUJIdVyXg'
 const VIDEO_ITEMS = [
   {
     src: videoCoin,
-    title: '₹5 coin → clean water',
-    desc: 'Coin box demo + instant water pour — a simple, memorable proof of service.',
+    title: 'Coin box → clean water',
+    desc: 'A short demo showing coin box water dispensing and clean drinking water output.',
   },
   {
     src: videoModern,
     title: 'Modern plant & delivery',
-    desc: 'Clean look, sealed cans, and doorstep delivery for homes, hospitals, and commercial places.',
+    desc: 'Sealed cans, a clean process, and doorstep delivery for homes, hospitals, and commercial places.',
   },
 ]
 
@@ -392,10 +392,10 @@ function App() {
         <section className="section section--videos" id="videos">
           <div className="section__inner">
             <p className="section-kicker">Creative preview</p>
-            <h2 className="section-title">A quick AI preview</h2>
+            <h2 className="section-title">Quick preview</h2>
             <p className="section-lead">
-              These are <strong>AI concept videos</strong> to show the idea: ₹5 coin box water and 20L can delivery use
-              cases for homes, hospitals, and commercial places around Mandya.
+              Short preview videos to show the idea: coin box water and 20L can delivery use cases for homes, hospitals,
+              and commercial places around Mandya.
             </p>
 
             <div className="video-grid">
@@ -553,14 +553,17 @@ function App() {
                 <label htmlFor="phone">Mobile number</label>
                 <input id="phone" name="phone" type="tel" required autoComplete="tel" />
 
-                <label htmlFor="quantity">20L cans</label>
-                <select id="quantity" name="quantity" defaultValue="2">
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5+">5 or more</option>
-                </select>
+                <label htmlFor="quantity">20L cans (1 to 500)</label>
+                <input
+                  id="quantity"
+                  name="quantity"
+                  type="number"
+                  min="1"
+                  max="500"
+                  defaultValue="2"
+                  required
+                  inputMode="numeric"
+                />
 
                 <label htmlFor="area">Area / village / landmark</label>
                 <input id="area" name="area" type="text" required placeholder="Mandya — …" />
