@@ -43,7 +43,7 @@ const I18N = {
     menu_toggle_aria: 'ಮೆನು ತೆರೆಯಿರಿ',
 
     brand_name: 'ಎಂಪಿ ವಾಟರ್ RO ಪ್ಲಾಂಟ್',
-    brand_tagline: 'ಶುದ್ಧ ನೀರಿನ ಸರಬರಾಜು · ಉತ್ತಮ ಆರೋಗ್ಯ',
+    brand_tagline: 'ಶುದ್ಧ ನೀರು · ಉತ್ತಮ ಆರೋಗ್ಯ',
 
     hero_eyebrow: 'ಮಂಡ್ಯ · 20 ಲೀಟರ್ ಕೆನ್‌ಗಳು · RO ಪ್ಲಾಂಟ್',
     hero_soon: 'ಶೀಘ್ರದಲ್ಲಿ ಆರಂಭ',
@@ -141,7 +141,7 @@ const I18N = {
     footer_jump: 'ಲಿಂಕ್‌ಗಳು',
     footer_contact: 'ಸಂಪರ್ಕ',
     footer_follow: 'ಫಾಲೋ',
-    footer_tagline: 'ಶುದ್ಧ ನೀರಿನ ಸರಬರಾಜು · ಉತ್ತಮ ಆರೋಗ್ಯ',
+    footer_tagline: 'ಶುದ್ಧ ನೀರು · ಉತ್ತಮ ಆರೋಗ್ಯ',
     footer_area: '20L ಕೆನ್‌ಗಳು · ಮಂಡ್ಯ ನಗರ & ಗ್ರಾಮಗಳು',
     footer_rights: 'ಎಲ್ಲ ಹಕ್ಕುಗಳು ಕಾಯ್ದಿರಿಸಲಾಗಿದೆ.',
 
