@@ -11,10 +11,24 @@ const MAILTO = `mailto:${EMAIL}`
 /** Google Maps (shared location) */
 const MAPS_URL = 'https://share.google/JjCXtOMCgUJIdVyXg'
 
+const VIDEO_ITEMS = [
+  {
+    src: 'videos/promo-coin-delivery.mp4',
+    title: '₹5 coin → clean water',
+    desc: 'Coin box demo + instant water pour — a simple, memorable proof of service.',
+  },
+  {
+    src: 'videos/promo-modern.mp4',
+    title: 'Modern plant & delivery',
+    desc: 'Clean look, sealed cans, and doorstep delivery for homes, hospitals, and commercial places.',
+  },
+]
+
 const navLinks = [
   { href: '#home', label: 'Home' },
   { href: '#quality', label: 'Plant' },
   { href: '#product', label: '20L' },
+  { href: '#videos', label: 'Videos' },
   { href: '#journey', label: 'Journey' },
   { href: '#mandya', label: 'Mandya' },
   { href: '#faq', label: 'FAQ' },
@@ -369,6 +383,34 @@ function App() {
                   </a>
                 </div>
               </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="section section--videos" id="videos">
+          <div className="section__inner">
+            <p className="section-kicker">Creative preview</p>
+            <h2 className="section-title">A quick AI preview</h2>
+            <p className="section-lead">
+              These are <strong>AI concept videos</strong> to show the idea: ₹5 coin box water and 20L can delivery use
+              cases for homes, hospitals, and commercial places around Mandya.
+            </p>
+
+            <div className="video-grid">
+              {VIDEO_ITEMS.map((v) => (
+                <article key={v.src} className="video-card">
+                  <div className="video-card__media">
+                    <video controls playsInline preload="metadata">
+                      <source src={`${import.meta.env.BASE_URL}${v.src}`} type="video/mp4" />
+                      Your browser does not support the video tag.
+                    </video>
+                  </div>
+                  <div className="video-card__meta">
+                    <h3>{v.title}</h3>
+                    <p>{v.desc}</p>
+                  </div>
+                </article>
+              ))}
             </div>
           </div>
         </section>
