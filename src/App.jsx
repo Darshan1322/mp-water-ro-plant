@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import './App.css'
 import logoPng from './assets/logo.png'
+import videoCoin from './assets/videos/promo-coin-delivery.mp4'
+import videoModern from './assets/videos/promo-modern.mp4'
 
 const PHONE_DISPLAY = '95385 86907'
 const PHONE_TEL = 'tel:+919538586907'
@@ -13,12 +15,12 @@ const MAPS_URL = 'https://share.google/JjCXtOMCgUJIdVyXg'
 
 const VIDEO_ITEMS = [
   {
-    src: 'videos/promo-coin-delivery.mp4',
+    src: videoCoin,
     title: '₹5 coin → clean water',
     desc: 'Coin box demo + instant water pour — a simple, memorable proof of service.',
   },
   {
-    src: 'videos/promo-modern.mp4',
+    src: videoModern,
     title: 'Modern plant & delivery',
     desc: 'Clean look, sealed cans, and doorstep delivery for homes, hospitals, and commercial places.',
   },
@@ -401,7 +403,7 @@ function App() {
                 <article key={v.src} className="video-card">
                   <div className="video-card__media">
                     <video controls playsInline preload="metadata">
-                      <source src={`${import.meta.env.BASE_URL}${v.src}`} type="video/mp4" />
+                      <source src={v.src} type="video/mp4" />
                       Your browser does not support the video tag.
                     </video>
                   </div>
