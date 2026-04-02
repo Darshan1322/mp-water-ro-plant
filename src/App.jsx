@@ -30,150 +30,151 @@ const VIDEO_ITEMS = [
 const I18N = {
   kn: {
     nav_home: 'ಮುಖಪುಟ',
-    nav_plant: 'ಪ್ಲಾಂಟ್',
+    nav_plant: 'ಘಟಕ',
     nav_20l: '20L',
     nav_videos: 'ವೀಡಿಯೊಗಳು',
     nav_journey: 'ಪ್ರಕ್ರಿಯೆ',
     nav_mandya: 'ಮಂಡ್ಯ',
     nav_faq: 'ಪ್ರಶ್ನೆಗಳು',
-    nav_order: 'ಆರ್ಡರ್',
+    nav_order: 'ಆದೇಶ',
     lang_kn: 'ಕನ್ನಡ',
     lang_en: 'English',
     lang_toggle_aria: 'ಭಾಷೆ ಬದಲಾಯಿಸಿ',
     menu_toggle_aria: 'ಮೆನು ತೆರೆಯಿರಿ',
 
-    brand_name: 'ಎಂಪಿ ವಾಟರ್ RO ಪ್ಲಾಂಟ್',
+    brand_name: 'ಎಂಪಿ ವಾಟರ್ ಆರ್‌ಓ ಘಟಕ',
     brand_tagline: 'ಶುದ್ಧ ನೀರು · ಉತ್ತಮ ಆರೋಗ್ಯ',
 
-    hero_eyebrow: 'ಮಂಡ್ಯ · 20 ಲೀಟರ್ ಕೆನ್‌ಗಳು · RO ಪ್ಲಾಂಟ್',
+    hero_eyebrow: 'ಮಂಡ್ಯ · 20 ಲೀಟರ್ ಕೆನ್‌ಗಳು · ಆರ್‌ಓ ಘಟಕ',
     hero_soon: 'ಶೀಘ್ರದಲ್ಲಿ ಆರಂಭ',
     hero_h1_line1: 'ನಂಬಿಕೆಯಿಂದ',
     hero_h1_line2: 'ನಿಮ್ಮ ಮನೆಗೆ ನೀರು.',
     hero_tagline:
-      'MP Water RO Plant ನಿಂದ ಸೀಲ್ಡ್ 20L ಶುದ್ಧ ನೀರಿನ ಕೆನ್‌ಗಳ ಸರಬರಾಜು ಮತ್ತು ಡೆಲಿವರಿ — ಮಂಡ್ಯ ನಗರ ಮತ್ತು ಸುತ್ತಮುತ್ತಲ ಗ್ರಾಮಗಳಿಗೆ.',
-    hero_badge1: 'RO ಶುದ್ಧೀಕರಣ',
+      'ಎಂಪಿ ವಾಟರ್ ಆರ್‌ಓ ಘಟಕದಿಂದ ಸೀಲ್ಡ್ 20L ಶುದ್ಧ ನೀರಿನ ಕೆನ್‌ಗಳ ಸರಬರಾಜು ಮತ್ತು ಮನೆಮನೆ ತಲುಪಿಸುವ ಸೇವೆ — ಮಂಡ್ಯ ನಗರ ಮತ್ತು ಸುತ್ತಮುತ್ತಲ ಗ್ರಾಮಗಳಿಗೆ.',
+    hero_badge1: 'ಆರ್‌ಓ ಶುದ್ಧೀಕರಣ',
     hero_badge2: 'ಸೀಲ್ಡ್ 20L',
-    hero_badge3: 'ಲೋಕಲ್ ರೂಟ್‌ಗಳು',
-    hero_cta_order: 'ಆರ್ಡರ್ ಮಾಡಿ',
-    hero_cta_whatsapp: 'WhatsApp',
-    hero_cta_call: 'ಕಾಲ್',
-    hero_slot_note: 'ಶೀಘ್ರದಲ್ಲೇ ಆರಂಭ — ಡೆಲಿವರಿ ಲಿಸ್ಟ್‌ಗೆ WhatsApp ಮಾಡಿ.',
+    hero_badge3: 'ಸ್ಥಳೀಯ ಮಾರ್ಗಗಳು',
+    hero_cta_order: 'ಆದೇಶಿಸಿ',
+    hero_cta_whatsapp: 'ವಾಟ್ಸಾಪ್',
+    hero_cta_call: 'ಕರೆ',
+    hero_slot_note: 'ಶೀಘ್ರದಲ್ಲೇ ಆರಂಭ — ವಿತರಣಾ ಪಟ್ಟಿಗೆ ವಾಟ್ಸಾಪ್ ಮಾಡಿ.',
 
     launch_ribbon: 'ಶೀಘ್ರ ಆರಂಭ — ಸಿದ್ಧತೆ ನಡೆಯುತ್ತಿದೆ',
-    launch_chip1_label: 'ಗೋ-ಲೈವ್',
+    launch_chip1_label: 'ಆರಂಭ ದಿನ',
     launch_chip1_sub: 'ಗುರಿ ಸಮಯ',
-    launch_chip2_label: 'RO ಪ್ಲಾಂಟ್',
-    launch_chip2_sub: 'ಫೈನಲ್ ಚೆಕ್ಸ್',
-    launch_chip3_label: '20L ರೂಟ್‌ಗಳು',
+    launch_chip2_label: 'ಆರ್‌ಓ ಘಟಕ',
+    launch_chip2_sub: 'ಅಂತಿಮ ಪರಿಶೀಲನೆ',
+    launch_chip3_label: '20L ಮಾರ್ಗಗಳು',
     launch_chip3_sub: 'ಮನೆ & ಅಂಗಡಿ',
-    launch_text_prefix: 'ಮಂಡ್ಯ ನಗರ ಮತ್ತು ಸುತ್ತಮುತ್ತಲ ಗ್ರಾಮಗಳಿಗೆ ಸಂಪೂರ್ಣ ಡೆಲಿವರಿ ಆರಂಭ',
+    launch_text_prefix: 'ಮಂಡ್ಯ ನಗರ ಮತ್ತು ಸುತ್ತಮುತ್ತಲ ಗ್ರಾಮಗಳಿಗೆ ಸಂಪೂರ್ಣ ವಿತರಣೆ ಆರಂಭ',
     launch_text_suffix:
-      'ರಲ್ಲಿ. ಈಗಲೇ WhatsApp ನಲ್ಲಿ ಸಂದೇಶ ಮಾಡಿ — ನಿಮ್ಮ ಸ್ಥಳವನ್ನು ಉಳಿಸಿಕೊಳ್ಳಬಹುದು; ಆರಂಭವಾಗುತ್ತಿದ್ದಂತೆ ಸಮಯ ದೃಢಪಡಿಸುತ್ತೇವೆ.',
+      'ರಲ್ಲಿ. ಈಗಲೇ ವಾಟ್ಸಾಪ್‌ನಲ್ಲಿ ಸಂದೇಶ ಮಾಡಿ — ನಿಮ್ಮ ಸ್ಥಳವನ್ನು ಉಳಿಸಿಕೊಳ್ಳಬಹುದು; ಆರಂಭವಾದ ಕೂಡಲೇ ಸಮಯ ದೃಢಪಡಿಸುತ್ತೇವೆ.',
 
-    quality_kicker: 'ಪ್ಲಾಂಟ್ ಗುಣಮಟ್ಟ',
+    quality_kicker: 'ಘಟಕದ ಗುಣಮಟ್ಟ',
     quality_title: 'ಮೂರು ಭರವಸೆ, ಒಂದು ಸರಬರಾಜು',
-    quality_lead: 'ನಾವು ಮಾಡೋದು ಸರಳ: ಶುದ್ಧ ನೀರು + ಹೈಜಿನ್ + ಸಮಯಕ್ಕೆ ಡೆಲಿವರಿ.',
+    quality_lead: 'ನಾವು ಮಾಡೋದು ಸರಳ: ಶುದ್ಧ ನೀರು + ಸ್ವಚ್ಛತೆ + ಸಮಯಕ್ಕೆ ವಿತರಣೆ.',
 
     product_kicker: 'ಉತ್ಪನ್ನ',
-    product_title: 'ಒಂದೇ ಸೈಸ್. ಭರ್ಜರಿ ಪ್ರಮಾಣ.',
+    product_title: 'ಒಂದೇ ಗಾತ್ರ. ಭರ್ಜರಿ ಪ್ರಮಾಣ.',
     product_lead:
-      '20 ಲೀಟರ್ ಕೆನ್‌ಗಳು ಮನೆ, ಆಫೀಸ್, ಅಂಗಡಿ—all ಗೆ ಸೂಕ್ತ. ನಾವು ಅದನ್ನೇ ಉತ್ತಮವಾಗಿ ಮಾಡುತ್ತೇವೆ.',
+      '20 ಲೀಟರ್ ಕೆನ್‌ಗಳು ಮನೆ, ಕಚೇರಿ, ಅಂಗಡಿ ಎಲ್ಲಕ್ಕೂ ಸೂಕ್ತ. ನಾವು ಅದನ್ನೇ ಉತ್ತಮವಾಗಿ ಮಾಡುತ್ತೇವೆ.',
     product_name: '20L ಶುದ್ಧ ನೀರಿನ ಕೆನ್',
     product_desc:
-      'RO ಶುದ್ಧೀಕರಣ, ಹೈಜಿನಿಕ್ ಫಿಲ್ಲಿಂಗ್, ಸೀಲ್ಡ್ ಕೆನ್. ಮಂಡ್ಯ ಪ್ರದೇಶದ ಮನೆ/ಕ್ಲಿನಿಕ್/ಅಂಗಡಿಗಳಿಗೆ ಸೂಕ್ತ.',
-    product_price_note: 'ಇಂದಿನ ದರ ಮತ್ತು ಕನಿಷ್ಠ ಆರ್ಡರ್‌ಗಾಗಿ ಕರೆ ಮಾಡಿ / WhatsApp ಮಾಡಿ.',
+      'ಆರ್‌ಓ ಶುದ್ಧೀಕರಣ, ಸ್ವಚ್ಛ ತುಂಬಿಕೆ, ಸೀಲ್ಡ್ ಕೆನ್. ಮಂಡ್ಯ ಪ್ರದೇಶದ ಮನೆ/ವೈದ್ಯಾಲಯ/ಅಂಗಡಿಗಳಿಗೆ ಸೂಕ್ತ.',
+    product_price_note: 'ಇಂದಿನ ದರ ಮತ್ತು ಕನಿಷ್ಠ ಆದೇಶಕ್ಕಾಗಿ ಕರೆ ಮಾಡಿ / ವಾಟ್ಸಾಪ್ ಮಾಡಿ.',
     product_cta_call: 'ಕರೆ ಮಾಡಿ',
-    product_cta_form: 'ತಕ್ಷಣ ಆರ್ಡರ್ ಫಾರ್ಮ್',
+    product_cta_form: 'ತಕ್ಷಣ ಆದೇಶ ನಮೂನೆ',
 
-    videos_kicker: 'ಪ್ರಿವ್ಯೂ',
-    videos_title: 'ವೀಡಿಯೊ ಪ್ರಿವ್ಯೂ',
+    videos_kicker: 'ಮುನ್ನೋಟ',
+    videos_title: 'ವೀಡಿಯೊ ಮುನ್ನೋಟ',
     videos_lead:
-      'ಸೇವೆಯ ಒಂದು ಚಿಕ್ಕ ಪ್ರಿವ್ಯೂ: ಕಾಯಿನ್ ಬಾಕ್ಸ್ ನೀರು ಮತ್ತು 20L ಕೆನ್ ಡೆಲಿವರಿ — ಮನೆ, ಆಸ್ಪತ್ರೆ, ಮತ್ತು ಕಾಮರ್ಷಿಯಲ್ ಸ್ಥಳಗಳಿಗೆ.',
-    video1_title: 'ಕಾಯಿನ್ ಬಾಕ್ಸ್ → ಶುದ್ಧ ನೀರು',
-    video1_desc: 'ಕಾಯಿನ್ ಬಾಕ್ಸ್‌ನಿಂದ ನೀರು ಪಡೆಯುವ ಡೆಮೊ ಮತ್ತು ಶುದ್ಧ ನೀರಿನ ಔಟ್‌ಪುಟ್.',
-    video2_title: 'ಪ್ಲಾಂಟ್ & ಡೆಲಿವರಿ',
-    video2_desc: 'ಸೀಲ್ಡ್ ಕೆನ್‌ಗಳು, ಕ್ಲೀನ್ ಪ್ರಕ್ರಿಯೆ, ಮನೆ/ಆಸ್ಪತ್ರೆ/ವ್ಯಾಪಾರ ಸ್ಥಳಗಳಿಗೆ ಡೋರ್ ಡೆಲಿವರಿ.',
+      'ಸೇವೆಯ ಒಂದು ಚಿಕ್ಕ ಮುನ್ನೋಟ: ನಾಣ್ಯ ಪೆಟ್ಟಿಗೆಯ ನೀರು ಮತ್ತು 20L ಕೆನ್ ವಿತರಣೆ — ಮನೆ, ಆಸ್ಪತ್ರೆ, ಮತ್ತು ವಾಣಿಜ್ಯ ಸ್ಥಳಗಳಿಗೆ.',
+    video1_title: 'ನಾಣ್ಯ ಪೆಟ್ಟಿಗೆ → ಶುದ್ಧ ನೀರು',
+    video1_desc: 'ನಾಣ್ಯ ಪೆಟ್ಟಿಗೆಯಿಂದ ನೀರು ಪಡೆಯುವ ಪ್ರದರ್ಶನ ಮತ್ತು ಶುದ್ಧ ನೀರಿನ ಹೊರಹರಿವು.',
+    video2_title: 'ಘಟಕ ಮತ್ತು ವಿತರಣೆ',
+    video2_desc: 'ಸೀಲ್ಡ್ ಕೆನ್‌ಗಳು, ಸ್ವಚ್ಛ ಪ್ರಕ್ರಿಯೆ, ಮನೆ/ಆಸ್ಪತ್ರೆ/ವ್ಯಾಪಾರ ಸ್ಥಳಗಳಿಗೆ ಮನೆಬಾಗಿಲು ವಿತರಣೆ.',
 
     journey_kicker: 'ಪ್ರಕ್ರಿಯೆ',
-    journey_title: 'ಪ್ಲಾಂಟ್‌ನಿಂದ ನಿಮ್ಮ ಮನೆಗೆ',
+    journey_title: 'ಘಟಕದಿಂದ ನಿಮ್ಮ ಮನೆಗೆ',
     journey_lead: 'ನೀರಿನ ಕೆನ್ ನಿಮ್ಮ ಮನೆಗೆ ಬರುವ ಮೊದಲು ಏನು ನಡೆಯುತ್ತದೆ?',
 
-    mandya_kicker: 'ಡೆಲಿವರಿ',
+    mandya_kicker: 'ವಿತರಣೆ',
     mandya_title: 'ಮಂಡ್ಯ ನಗರ & ಗ್ರಾಮಗಳು',
     mandya_lead:
-      'ನಿಮ್ಮ ಏರಿಯಾ ತಿಳಿಸಿ — ಇಂದು/ನಾಳೆ ರೂಟ್‌ನಲ್ಲಿ ಇದೆಯೇ ಎಂದು ತಿಳಿಸುತ್ತೇವೆ. ಲ್ಯಾಂಡ್ಮಾರ್ಕ್ ನೀಡಿದರೆ ಸಾಕು.',
+      'ನಿಮ್ಮ ಪ್ರದೇಶ ತಿಳಿಸಿ — ಇಂದು/ನಾಳೆ ಮಾರ್ಗದಲ್ಲಿ ಇದೆಯೇ ಎಂದು ತಿಳಿಸುತ್ತೇವೆ. ಗುರುತುಸ್ಥಳ ನೀಡಿದರೆ ಸಾಕು.',
 
     mandya_b1: '20L ಕೆನ್‌ಗಳು ಮಾತ್ರ — ಒಂದೇ ಉತ್ಪನ್ನ, ಉತ್ತಮ ಗುಣಮಟ್ಟ',
-    mandya_b2: 'ಗ್ರಾಮಗಳಿಗೆ ಲ್ಯಾಂಡ್ಮಾರ್ಕ್ ಆಧಾರಿತ ವಿಳಾಸ',
-    mandya_b3: 'WhatsApp ಮೂಲಕ ಸಮಯ ಬದಲಾವಣೆ ಸುಲಭ',
-    mandya_b4: 'ಲೋಡಿಂಗ್ ತಂಡಕ್ಕೆ ನೇರ ಸಂಪರ್ಕ',
+    mandya_b2: 'ಗ್ರಾಮಗಳಿಗೆ ಗುರುತುಸ್ಥಳ ಆಧಾರಿತ ವಿಳಾಸ',
+    mandya_b3: 'ವಾಟ್ಸಾಪ್ ಮೂಲಕ ಸಮಯ ಬದಲಾವಣೆ ಸುಲಭ',
+    mandya_b4: 'ಸಾಗಣೆ ತಂಡಕ್ಕೆ ನೇರ ಸಂಪರ್ಕ',
 
-    location_title: 'ಪ್ಲಾಂಟ್ ಲೊಕೇಶನ್',
-    location_line_prefix: 'ಇಲ್ಲಿ ತೆರಳಿ/ಡ್ರೈವರ್‌ಗೆ ಕಳುಹಿಸಿ — ',
+    location_title: 'ಘಟಕದ ಸ್ಥಳ',
+    location_line_prefix: 'ಇಲ್ಲಿ ತೆರಳಿ/ಚಾಲಕನಿಗೆ ಕಳುಹಿಸಿ — ',
+    maps_name: 'ಗೂಗಲ್ ನಕ್ಷೆಗಳು',
     location_cta: 'ಮ್ಯಾಪ್ & ದಿಕ್ಕು ತೆರೆಯಿರಿ',
     location_pin_title: 'ಲ್ಯಾಂಡ್ಮಾರ್ಕ್ ಮೂಲಕ ಹೇಳಿ',
     location_pin_text:
-      'ಮಂಡಲ/ಗ್ರಾಮ ಹೆಸರು, ಶಾಲೆ ಅಥವಾ ದೇವಸ್ಥಾನ ಹತ್ತಿರ — ಡ್ರೈವರ್‌ಗೂ ಸುಲಭವಾಗಿ ಸಿಗುವಂತೆ ಹೇಳಿ.',
+      'ಮಂಡಲ/ಗ್ರಾಮ ಹೆಸರು, ಶಾಲೆ ಅಥವಾ ದೇವಸ್ಥಾನ ಹತ್ತಿರ — ಚಾಲಕನಿಗೂ ಸುಲಭವಾಗಿ ಸಿಗುವಂತೆ ಹೇಳಿ.',
     location_reach_title: 'ಸಂಪರ್ಕಿಸಿ',
-    location_whatsapp: 'WhatsApp ತೆರೆಯಿರಿ',
-    location_instagram: 'Instagram @mp_water_supply',
+    location_whatsapp: 'ವಾಟ್ಸಾಪ್ ತೆರೆಯಿರಿ',
+    location_instagram: 'ಇನ್‌ಸ್ಟಾಗ್ರಾಂ @mp_water_supply',
 
     uses_kicker: '20L ಬಳಕೆ',
     uses_title: 'ಮಂಡ್ಯದಲ್ಲಿನ ಬಳಕೆಗಳು',
-    uses_lead: 'ಒಂದೇ ಉತ್ಪನ್ನ — ನಿಮ್ಮ ಅಗತ್ಯಕ್ಕೆ ಹೊಂದುವ ಟೈಲ್ ಆಯ್ಕೆ ಮಾಡಿ.',
+    uses_lead: 'ಒಂದೇ ಉತ್ಪನ್ನ — ನಿಮ್ಮ ಅಗತ್ಯಕ್ಕೆ ಹೊಂದುವ ಆಯ್ಕೆಯನ್ನು ಆರಿಸಿ.',
     about_strip:
-      'MP Water RO Plant — Purified Water Supply — Pure Health. ಮಂಡ್ಯ ಪ್ರದೇಶಕ್ಕೆ ನೇರ ಡೆಲಿವರಿ: ಕರೆ ಮಾಡಿ, ಮೆಸೇಜ್ ಮಾಡಿ, ಸ್ಪಷ್ಟ ಉತ್ತರ ಪಡೆಯಿರಿ.',
+      'ಎಂಪಿ ವಾಟರ್ ಆರ್‌ಓ ಘಟಕ — ಶುದ್ಧ ನೀರಿನ ಸರಬರಾಜು — ಉತ್ತಮ ಆರೋಗ್ಯ. ಮಂಡ್ಯ ಪ್ರದೇಶಕ್ಕೆ ನೇರ ವಿತರಣೆ: ಕರೆ ಮಾಡಿ, ಸಂದೇಶ ಮಾಡಿ, ಸ್ಪಷ್ಟ ಉತ್ತರ ಪಡೆಯಿರಿ.',
 
     faq_kicker: 'ಸ್ಪಷ್ಟ ಉತ್ತರಗಳು',
     faq_title: 'ಪ್ರಶ್ನೆಗಳು',
-    faq_lead: 'ಪ್ರಶ್ನೆ ಮೇಲೆ ಟ್ಯಾಪ್ ಮಾಡಿ — ಸರಳ ಉತ್ತರ.',
+    faq_lead: 'ಪ್ರಶ್ನೆಯನ್ನು ಒತ್ತಿರಿ — ಸರಳ ಉತ್ತರ ನೋಡಿ.',
 
-    contact_success_prefix: 'WhatsApp ತೆರೆದುಕೊಳ್ಳದಿದ್ದರೆ ಕರೆ ಮಾಡಿ ',
+    contact_success_prefix: 'ವಾಟ್ಸಾಪ್ ತೆರೆದುಕೊಳ್ಳದಿದ್ದರೆ ಕರೆ ಮಾಡಿ ',
     contact_success_mid: ' ಅಥವಾ ಇಮೇಲ್ ಮಾಡಿ ',
-    voice_note: 'ವಾಯ್ಸ್ ಆರ್ಡರ್ ಸಹ ಸ್ವಾಗತ — ಮೊದಲ ಬಾರಿ ಲ್ಯಾಂಡ್ಮಾರ್ಕ್‌ಗೆ ವಿಶೇಷವಾಗಿ.',
+    voice_note: 'ಧ್ವನಿ ಮೂಲಕ ಆದೇಶವೂ ಸ್ವಾಗತ — ಮೊದಲ ಬಾರಿ ಗುರುತುಸ್ಥಳ ಹೇಳಲು ಹೆಚ್ಚು ಅನುಕೂಲ.',
     side_phone: 'ಫೋನ್',
-    side_whatsapp: 'WhatsApp',
-    side_instagram: 'Instagram',
+    side_whatsapp: 'ವಾಟ್ಸಾಪ್',
+    side_instagram: 'ಇನ್‌ಸ್ಟಾಗ್ರಾಂ',
     side_email: 'ಇಮೇಲ್',
-    side_location: 'ಲೊಕೇಶನ್',
-    side_maps: 'Google Maps — ದಿಕ್ಕು',
+    side_location: 'ಸ್ಥಳ',
+    side_maps: 'ಗೂಗಲ್ ನಕ್ಷೆಗಳು — ದಿಕ್ಕು',
 
     footer_jump: 'ಲಿಂಕ್‌ಗಳು',
     footer_contact: 'ಸಂಪರ್ಕ',
-    footer_follow: 'ಫಾಲೋ',
+    footer_follow: 'ಅನುಸರಿಸಿ',
     footer_tagline: 'ಶುದ್ಧ ನೀರು · ಉತ್ತಮ ಆರೋಗ್ಯ',
     footer_area: '20L ಕೆನ್‌ಗಳು · ಮಂಡ್ಯ ನಗರ & ಗ್ರಾಮಗಳು',
     footer_rights: 'ಎಲ್ಲ ಹಕ್ಕುಗಳು ಕಾಯ್ದಿರಿಸಲಾಗಿದೆ.',
 
-    contact_kicker: 'ಆರ್ಡರ್',
-    contact_title: 'WhatsApp ಮೂಲಕ ಆರ್ಡರ್ ಮಾಡಿ',
-    contact_lead_prefix: 'ಫಾರ್ಮ್ ತುಂಬಿ — WhatsApp ತೆರೆಯುತ್ತದೆ. ಬೇಕಾದರೆ ಕರೆ ಮಾಡಿ ಅಥವಾ ಇಮೇಲ್ ಮಾಡಿ ',
+    contact_kicker: 'ಆದೇಶ',
+    contact_title: 'ವಾಟ್ಸಾಪ್ ಮೂಲಕ ಆದೇಶಿಸಿ',
+    contact_lead_prefix: 'ನಮೂನೆ ಭರ್ತಿ ಮಾಡಿ — ವಾಟ್ಸಾಪ್ ತೆರೆಯುತ್ತದೆ. ಬೇಕಾದರೆ ಕರೆ ಮಾಡಿ ಅಥವಾ ಇಮೇಲ್ ಮಾಡಿ ',
     name_label: 'ನಿಮ್ಮ ಹೆಸರು',
-    phone_label: 'ಮೊಬೈಲ್ ನಂಬರ್',
+    phone_label: 'ಮೊಬೈಲ್ ಸಂಖ್ಯೆ',
     qty_label: '20L ಕೆನ್‌ಗಳು (1 ರಿಂದ 500)',
-    area_label: 'ಏರಿಯಾ / ಗ್ರಾಮ / ಲ್ಯಾಂಡ್ಮಾರ್ಕ್',
+    area_label: 'ಪ್ರದೇಶ / ಗ್ರಾಮ / ಗುರುತುಸ್ಥಳ',
     note_label: 'ಟಿಪ್ಪಣಿ (ಐಚ್ಛಿಕ)',
-    note_placeholder: 'ಸಮಯ, ಗೇಟ್, ಫ್ಲೋರ್…',
-    submit_btn: 'WhatsApp ಮೆಸೇಜ್ ತಯಾರಿಸಿ',
+    note_placeholder: 'ಸಮಯ, ಬಾಗಿಲು, ಮಹಡಿ…',
+    submit_btn: 'ವಾಟ್ಸಾಪ್ ಸಂದೇಶ ತಯಾರಿಸಿ',
 
     quality_tag1: 'ಶುದ್ಧೀಕರಣ',
-    quality_title1: 'RO ಶುದ್ಧೀಕರಣ',
-    quality_text1: 'ಬಹು ಹಂತದ RO ಶುದ್ಧೀಕರಣದಿಂದ ಕುಡಿಯುವ ನೀರಿಗೆ ಸ್ಪಷ್ಟತೆ ಮತ್ತು ನಂಬಿಕೆ.',
+    quality_title1: 'ಆರ್‌ಓ ಶುದ್ಧೀಕರಣ',
+    quality_text1: 'ಬಹು ಹಂತದ ಆರ್‌ಓ ಶುದ್ಧೀಕರಣದಿಂದ ಕುಡಿಯುವ ನೀರಿಗೆ ಸ್ಪಷ್ಟತೆ ಮತ್ತು ನಂಬಿಕೆ.',
     quality_tag2: 'ಹೈಜಿನ್',
-    quality_title2: 'ಹೈಜಿನಿಕ್ ಫಿಲ್ಲಿಂಗ್',
+    quality_title2: 'ಸ್ವಚ್ಛ ತುಂಬಿಕೆ',
     quality_text2: '20L ಕೆನ್‌ಗಳು ಸೀಲ್ಡ್ ಆಗಿ, ಸ್ವಚ್ಚತಾ ಕ್ರಮ ಪಾಲಿಸಿ ಭರ್ತಿ ಮಾಡಲಾಗುತ್ತದೆ.',
     quality_tag3: 'ಲೋಕಲ್',
-    quality_title3: 'ಮಂಡ್ಯಕ್ಕೆ ಸಮೀಪ',
-    quality_text3: 'ಲೋಕಲ್ ಸರಬರಾಜು ಆದ್ದರಿಂದ ಸಮಯಕ್ಕೆ ಡೆಲಿವರಿ ಮತ್ತು ಫ್ರೆಶ್ ಸ್ಟಾಕ್.',
+    quality_title3: 'ಮಂಡ್ಯಕ್ಕೆ ಸಮೀಪದ ಸರಬರಾಜು',
+    quality_text3: 'ಸ್ಥಳೀಯ ಸರಬರಾಜು ಆದ್ದರಿಂದ ಸಮಯಕ್ಕೆ ವಿತರಣೆ ಮತ್ತು ತಾಜಾ ಸಂಗ್ರಹ.',
 
-    journey_step1_title: 'RO ಶುದ್ಧೀಕರಣ',
-    journey_step1_text: 'ನೀರು ಪ್ಲಾಂಟ್ ಪ್ರಕ್ರಿಯೆ ದಾಟಿ ನಂತರ ಮಾತ್ರ ಕೆನ್‌ಗೆ ಬರುತ್ತದೆ.',
-    journey_step2_title: 'ಕೆನ್ ಸ್ವಚ್ಚತೆ & ಫಿಲ್ಲಿಂಗ್',
-    journey_step2_text: 'ಹೈಜಿನ್‌ ಮೇಲೆ ಗಮನ ನೀಡಿ ನಿಯಮಿತ ಪ್ರಕ್ರಿಯೆಯಲ್ಲಿ 20L ಕೆನ್‌ಗಳನ್ನು ಭರ್ತಿ ಮಾಡುತ್ತೇವೆ.',
-    journey_step3_title: 'ಸೀಲ್ಡ್ & ಲೇಬಲ್',
-    journey_step3_text: 'ಸೀಲ್ಡ್ ಮಾಡಿ, ಲೇಬಲ್‌ನೊಂದಿಗೆ ಡೆಲಿವರಿಗೆ ತಯಾರಾಗುತ್ತದೆ.',
-    journey_step4_title: 'ಡೆಲಿವರಿ ರೂಟ್',
-    journey_step4_text: 'ಮಂಡ್ಯ ನಗರ ಮತ್ತು ಗ್ರಾಮಗಳಿಗೆ ರೂಟ್ ಪ್ಲ್ಯಾನ್ ಮಾಡಿ ನಿಮ್ಮ ಮನೆಗೆ ತಲುಪಿಸುತ್ತದೆ.',
+    journey_step1_title: 'ಆರ್‌ಓ ಶುದ್ಧೀಕರಣ',
+    journey_step1_text: 'ನೀರು ಘಟಕದ ಪ್ರಕ್ರಿಯೆ ದಾಟಿ ನಂತರ ಮಾತ್ರ ಕೆನ್‌ಗೆ ಬರುತ್ತದೆ.',
+    journey_step2_title: 'ಕೆನ್ ಸ್ವಚ್ಛತೆ ಮತ್ತು ತುಂಬಿಕೆ',
+    journey_step2_text: 'ಸ್ವಚ್ಛತೆಗೆ ಆದ್ಯತೆ ನೀಡಿ ನಿಯಮಿತ ಕ್ರಮದಲ್ಲಿ 20L ಕೆನ್‌ಗಳನ್ನು ಭರ್ತಿ ಮಾಡುತ್ತೇವೆ.',
+    journey_step3_title: 'ಸೀಲಿಂಗ್ ಮತ್ತು ಗುರುತುಪತ್ರ',
+    journey_step3_text: 'ಸೀಲಿಂಗ್ ಮಾಡಿ, ಗುರುತುಪತ್ರದೊಂದಿಗೆ ವಿತರಣೆಗೆ ತಯಾರಾಗುತ್ತದೆ.',
+    journey_step4_title: 'ವಿತರಣೆ ಮಾರ್ಗ',
+    journey_step4_text: 'ಮಂಡ್ಯ ನಗರ ಮತ್ತು ಗ್ರಾಮಗಳಿಗೆ ಮಾರ್ಗ ಯೋಜಿಸಿ ನಿಮ್ಮ ಮನೆಗೆ ತಲುಪಿಸುತ್ತೇವೆ.',
 
     bento1_title: 'ಮನೆಗಳು & ಅಡುಗೆ',
     bento1_text: 'ದಿನನಿತ್ಯ ಕುಡಿಯಲು ಮತ್ತು ಅಡುಗೆಗೆ 20L ಕೆನ್ ಅನುಕೂಲ.',
@@ -184,16 +185,16 @@ const I18N = {
     bento4_title: 'ಮಂಡ್ಯ ಮೊದಲಿಗೆ',
     bento4_text: 'ಮಂಡ್ಯ ನಗರ ಮತ್ತು ಸುತ್ತಮುತ್ತಲ ಗ್ರಾಮಗಳ ಡೆಲಿವರಿ ಮೇಲೆ ಫೋಕಸ್.',
 
-    faq_q1: 'ಯಾವ ಸೈಸ್ ಕೆನ್‌ಗಳನ್ನು ಡೆಲಿವರಿ ಮಾಡುತ್ತೀರಿ?',
-    faq_a1: 'ನಾವು 20 ಲೀಟರ್ ಶುದ್ಧ ಕುಡಿಯುವ ನೀರಿನ ಕೆನ್‌ಗಳನ್ನು ಡೆಲಿವರಿ ಮಾಡುತ್ತೇವೆ.',
-    faq_q2: 'ಯಾವ ಪ್ರದೇಶಗಳಿಗೆ ಡೆಲಿವರಿ?',
-    faq_a2: 'ಮಂಡ್ಯ ನಗರ ಮತ್ತು ಸುತ್ತಮುತ್ತಲ ಗ್ರಾಮಗಳು. ನಿಮ್ಮ ಲ್ಯಾಂಡ್ಮಾರ್ಕ್ ಕೊಟ್ಟರೆ ರೂಟ್ ಹಾಗೂ ಸಮಯ ತಿಳಿಸುತ್ತೇವೆ.',
+    faq_q1: 'ಯಾವ ಗಾತ್ರದ ಕೆನ್‌ಗಳನ್ನು ವಿತರಿಸುತ್ತೀರಿ?',
+    faq_a1: 'ನಾವು 20 ಲೀಟರ್ ಶುದ್ಧ ಕುಡಿಯುವ ನೀರಿನ ಕೆನ್‌ಗಳನ್ನು ವಿತರಿಸುತ್ತೇವೆ.',
+    faq_q2: 'ಯಾವ ಪ್ರದೇಶಗಳಿಗೆ ವಿತರಣೆ ಇದೆ?',
+    faq_a2: 'ಮಂಡ್ಯ ನಗರ ಮತ್ತು ಸುತ್ತಮುತ್ತಲ ಗ್ರಾಮಗಳು. ನಿಮ್ಮ ಗುರುತುಸ್ಥಳ ಕೊಟ್ಟರೆ ಮಾರ್ಗ ಹಾಗೂ ಸಮಯ ತಿಳಿಸುತ್ತೇವೆ.',
     faq_q3: 'ಆರ್ಡರ್ ಹೇಗೆ ಮಾಡುವುದು?',
-    faq_a3: 'ಕೆಳಗಿನ ಫಾರ್ಮ್ ಮೂಲಕ WhatsApp ತೆರೆಯುತ್ತದೆ. ಇಲ್ಲವೇ ಕರೆ ಮಾಡಿ ಅಥವಾ ಇಮೇಲ್ ಮಾಡಿ.',
-    faq_q4: 'ದರ ಹೇಗೆ ಗೊತ್ತಾಗುತ್ತದೆ?',
-    faq_a4: 'ದರವು ದೂರ/ರೂಟ್ ಮೇಲೆ ಬದಲಾಗಬಹುದು. ಇಂದಿನ ದರಕ್ಕಾಗಿ ಕರೆ ಮಾಡಿ ಅಥವಾ WhatsApp ಮಾಡಿ.',
-    faq_q5: 'RO ಪ್ಲಾಂಟ್ ಲೊಕೇಶನ್ ಎಲ್ಲಿ?',
-    faq_a5: 'Google Maps ನಲ್ಲಿ ನಮ್ಮ ಲೊಕೇಶನ್ ತೆರೆಯಿರಿ — ದಿಕ್ಕು ತಿಳಿಯಲು.',
+    faq_a3: 'ಕೆಳಗಿನ ನಮೂನೆಯಿಂದ ವಾಟ್ಸಾಪ್ ತೆರೆಯುತ್ತದೆ. ಇಲ್ಲವೇ ಕರೆ ಮಾಡಿ ಅಥವಾ ಇಮೇಲ್ ಮಾಡಿ.',
+    faq_q4: 'ದರವನ್ನು ಹೇಗೆ ತಿಳಿಯಬಹುದು?',
+    faq_a4: 'ದರವು ದೂರ/ಮಾರ್ಗದ ಮೇಲೆ ಬದಲಾಗಬಹುದು. ಇಂದಿನ ದರಕ್ಕಾಗಿ ಕರೆ ಮಾಡಿ ಅಥವಾ ವಾಟ್ಸಾಪ್ ಮಾಡಿ.',
+    faq_q5: 'ಆರ್‌ಓ ಘಟಕದ ಸ್ಥಳ ಎಲ್ಲಿದೆ?',
+    faq_a5: 'ಗೂಗಲ್ ನಕ್ಷೆಗಳಲ್ಲಿ ನಮ್ಮ ಸ್ಥಳ ತೆರೆಯಿರಿ — ದಿಕ್ಕು ತಿಳಿಯಲು.',
   },
   en: {
     nav_home: 'Home',
@@ -277,6 +278,7 @@ const I18N = {
 
     location_title: 'Plant location',
     location_line_prefix: 'Visit or send drivers here — opens in ',
+    maps_name: 'Google Maps',
     location_cta: 'Open map & directions',
     location_pin_title: 'Drop a pin in words',
     location_pin_text:
@@ -680,7 +682,7 @@ function App() {
             <p className="section-lead">{t('product_lead')}</p>
             <div className="product-spotlight">
               <div className="product-mega" aria-hidden>
-                20<span>litre</span>
+                20<span>{lang === 'kn' ? 'ಲೀಟರ್' : 'litre'}</span>
               </div>
               <div>
                 <h3>{t('product_name')}</h3>
@@ -711,7 +713,9 @@ function App() {
                   <div className="video-card__media">
                     <video controls playsInline preload="metadata">
                       <source src={v.src} type="video/mp4" />
-                      Your browser does not support the video tag.
+                      {lang === 'kn'
+                        ? 'ವೀಡಿಯೊ ಪ್ರದರ್ಶನಕ್ಕೆ ನಿಮ್ಮ ಬ್ರೌಸರ್ ಬೆಂಬಲಿಸುತ್ತಿಲ್ಲ.'
+                        : 'Your browser does not support the video tag.'}
                     </video>
                   </div>
                   <div className="video-card__meta">
@@ -765,7 +769,7 @@ function App() {
                 <p style={{ marginBottom: '14px' }}>
                   {t('location_line_prefix')}
                   <a className="maps-link" href={MAPS_URL} target="_blank" rel="noreferrer">
-                    Google Maps
+                    {t('maps_name')}
                   </a>
                   .
                 </p>
@@ -837,7 +841,7 @@ function App() {
                       <>
                         {t(item.aKey)}{' '}
                         <a className="faq-inline-link" href={MAPS_URL} target="_blank" rel="noreferrer">
-                          Google Maps
+                          {t('maps_name')}
                         </a>
                         .
                       </>
@@ -880,7 +884,7 @@ function App() {
                 />
 
                 <label htmlFor="area">{t('area_label')}</label>
-                <input id="area" name="area" type="text" required placeholder="Mandya — …" />
+                <input id="area" name="area" type="text" required placeholder={lang === 'kn' ? 'ಮಂಡ್ಯ — …' : 'Mandya — …'} />
 
                 <label htmlFor="note">{t('note_label')}</label>
                 <textarea id="note" name="note" placeholder={t('note_placeholder')} />
@@ -908,7 +912,7 @@ function App() {
                 <h4>{t('side_whatsapp')}</h4>
                 <p>
                   <a href={WHATSAPP} target="_blank" rel="noreferrer">
-                    WhatsApp
+                    {t('side_whatsapp')}
                   </a>
                 </p>
                 <h4>{t('side_instagram')}</h4>
@@ -938,7 +942,7 @@ function App() {
         href={WHATSAPP}
         target="_blank"
         rel="noreferrer"
-        aria-label={lang === 'kn' ? 'WhatsApp ಚಾಟ್' : 'Chat on WhatsApp'}
+        aria-label={lang === 'kn' ? 'ವಾಟ್ಸಾಪ್ ಚಾಟ್' : 'Chat on WhatsApp'}
       >
         <svg viewBox="0 0 24 24" aria-hidden>
           <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
@@ -948,7 +952,7 @@ function App() {
       <footer className="site-footer">
         <div className="site-footer__inner">
           <div>
-            <strong>MP WATER RO PLANT</strong>
+            <strong>{t('brand_name')}</strong>
             {t('footer_tagline')}
             <br />
             {t('footer_area')}
