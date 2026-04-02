@@ -323,6 +323,49 @@ const I18N = {
     note_label: 'Notes (optional)',
     note_placeholder: 'Time window, floor, gate…',
     submit_btn: 'Compose WhatsApp order',
+
+    /* Quality cards */
+    quality_tag1: 'Filtration',
+    quality_title1: 'RO purification',
+    quality_text1: 'Multi-stage reverse osmosis tuned for drinking water — clearer taste and more confidence in every can.',
+    quality_tag2: 'Hygiene',
+    quality_title2: 'Hygienic filling',
+    quality_text2: 'Sealed 20L cans and careful handling at the plant — cleanliness first, no shortcuts.',
+    quality_tag3: 'Local',
+    quality_title3: 'Local supply',
+    quality_text3: 'Packed near Mandya so routes stay short and supply stays dependable.',
+
+    /* Journey steps */
+    journey_step1_title: 'RO treatment',
+    journey_step1_text: 'Water passes through our plant process before it ever touches your can.',
+    journey_step2_title: 'Sanitised fill',
+    journey_step2_text: '20 litre containers are filled in a controlled, hygiene-first workflow.',
+    journey_step3_title: 'Sealed & labelled',
+    journey_step3_text: 'Sealed and ready for transport with MP Water RO Plant identity.',
+    journey_step4_title: 'Route to you',
+    journey_step4_text: 'We schedule drops across Mandya city and nearby villages — call or WhatsApp.',
+
+    /* Bento tiles */
+    bento1_title: 'Homes & kitchens',
+    bento1_text: 'Daily drinking and cooking — 20L fits the week comfortably.',
+    bento2_title: 'Shops',
+    bento2_text: 'Retail counters and small eateries that need steady refills.',
+    bento3_title: 'Functions',
+    bento3_text: 'Extra cans for events — tell us the date and count early.',
+    bento4_title: 'Mandya-first',
+    bento4_text: 'City lanes and surrounding villages on our delivery map.',
+
+    /* FAQ */
+    faq_q1: 'What size cans do you deliver?',
+    faq_a1: 'We deliver 20 litre purified drinking water cans.',
+    faq_q2: 'Which areas do you cover?',
+    faq_a2: 'Mandya city and nearby villages. Share your landmark and we will confirm coverage and timing.',
+    faq_q3: 'How do I place an order?',
+    faq_a3: 'Use the form to open WhatsApp with your details, or call us / email us.',
+    faq_q4: 'How do I know the rate?',
+    faq_a4: 'Rates can change with supply and distance. Call or message for today’s price and minimum quantity.',
+    faq_q5: 'Where is the RO plant?',
+    faq_a5: 'Open our location on Google Maps for directions.',
   },
 }
 
