@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './App.css'
 import logoPng from './assets/logo.png'
 import logoKnPng from './assets/logo-kn.png'
@@ -13,6 +13,7 @@ const EMAIL = 'mpwatersupply.mandya@gmail.com'
 const MAILTO = `mailto:${EMAIL}`
 /** Google Maps (shared location) */
 const MAPS_URL = 'https://share.google/JjCXtOMCgUJIdVyXg'
+const LAUNCH_DATE_ISO = '2026-04-12T11:00:00+05:30'
 
 const VIDEO_ITEMS = [
   {
@@ -60,6 +61,13 @@ const I18N = {
     hero_slot_note: 'ಶೀಘ್ರದಲ್ಲೇ ಆರಂಭ — ವಿತರಣಾ ಪಟ್ಟಿಗೆ ವಾಟ್ಸಾಪ್ ಮಾಡಿ.',
 
     launch_ribbon: 'ಶೀಘ್ರ ಆರಂಭ — ಸಿದ್ಧತೆ ನಡೆಯುತ್ತಿದೆ',
+    launch_date_label: 'ಭಾನುವಾರ, 12 ಏಪ್ರಿಲ್',
+    launch_countdown_title: 'ಗ್ರ್ಯಾಂಡ್ ಓಪನಿಂಗ್ ಕೌಂಟ್‌ಡೌನ್',
+    countdown_days: 'ದಿನ',
+    countdown_hours: 'ಗಂ',
+    countdown_minutes: 'ನಿಮಿ',
+    countdown_seconds: 'ಸೆ',
+    launch_open_now: 'ಇಂದು ನಮ್ಮ ಸೇವೆ ಆರಂಭವಾಗಿದೆ — ಈಗಲೇ ಆದೇಶಿಸಿ!',
     launch_chip1_label: 'ಆರಂಭ ದಿನ',
     launch_chip1_sub: 'ಗುರಿ ಸಮಯ',
     launch_chip2_label: 'ಆರ್‌ಓ ಘಟಕ',
@@ -228,6 +236,13 @@ const I18N = {
     hero_slot_note: 'Opening soon — WhatsApp us to get on the delivery list.',
 
     launch_ribbon: "Opening soon — we're starting up",
+    launch_date_label: 'Sunday, 12 April',
+    launch_countdown_title: 'Grand opening countdown',
+    countdown_days: 'days',
+    countdown_hours: 'hrs',
+    countdown_minutes: 'min',
+    countdown_seconds: 'sec',
+    launch_open_now: 'We are open today — place your order now!',
     launch_chip1_label: 'Target go-live',
     launch_chip1_sub: 'Timeline',
     launch_chip2_label: 'RO plant',
@@ -438,9 +453,53 @@ function getLaunchWindowLabel(lang) {
   return LAUNCH_WINDOW_LABELS[lang] || LAUNCH_WINDOW_LABELS.en
 }
 
+function getCountdownParts(targetMs) {
+  const diff = targetMs - Date.now()
+  if (diff <= 0) {
+    return {
+      isOpen: true,
+      days: 0,
+      hours: 0,
+      minutes: 0,
+      seconds: 0,
+    }
+  }
+
+  const totalSeconds = Math.floor(diff / 1000)
+  const days = Math.floor(totalSeconds / 86400)
+  const hours = Math.floor((totalSeconds % 86400) / 3600)
+  const minutes = Math.floor((totalSeconds % 3600) / 60)
+  const seconds = totalSeconds % 60
+
+  return {
+    isOpen: false,
+    days,
+    hours,
+    minutes,
+    seconds,
+  }
+}
+
 function LaunchSoonBanner({ lang }) {
   const t = (key) => getText(lang, key)
   const launchWindowLabel = getLaunchWindowLabel(lang)
+  const launchTargetMs = new Date(LAUNCH_DATE_ISO).getTime()
+  const [countdown, setCountdown] = useState(() => getCountdownParts(launchTargetMs))
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCountdown(getCountdownParts(launchTargetMs))
+    }, 1000)
+    return () => clearInterval(timer)
+  }, [launchTargetMs])
+
+  const countdownItems = [
+    { value: countdown.days, label: t('countdown_days') },
+    { value: countdown.hours, label: t('countdown_hours') },
+    { value: countdown.minutes, label: t('countdown_minutes') },
+    { value: countdown.seconds, label: t('countdown_seconds') },
+  ]
+
   return (
     <div className="launch-soon" role="status" aria-live="polite">
       <div className="launch-soon__inner">
@@ -450,6 +509,23 @@ function LaunchSoonBanner({ lang }) {
           </span>
           {t('launch_ribbon')}
         </p>
+        <p className="launch-soon__date">{t('launch_date_label')}</p>
+
+        {countdown.isOpen ? (
+          <p className="launch-soon__open">{t('launch_open_now')}</p>
+        ) : (
+          <div className="launch-soon__countdown-wrap">
+            <p className="launch-soon__countdown-title">{t('launch_countdown_title')}</p>
+            <div className="launch-soon__countdown" aria-label={t('launch_countdown_title')}>
+              {countdownItems.map((item) => (
+                <div key={item.label} className="launch-soon__timer-card">
+                  <strong>{String(item.value).padStart(2, '0')}</strong>
+                  <span>{item.label}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
 
         <div className="launch-soon__icons">
           <div className="launch-soon__chip">
@@ -512,6 +588,42 @@ function WaveDivider({ flip, toNavy }) {
           d="M0,24 C240,48 480,0 720,24 C960,48 1200,0 1440,24 L1440,48 L0,48 Z"
         />
       </svg>
+    </div>
+  )
+}
+
+function HeroWaterShowcase({ lang }) {
+  const isKn = lang === 'kn'
+  return (
+    <div className="hero-water" aria-label={isKn ? '20 ಲೀಟರ್ ಕೆನ್ ಮತ್ತು ಟ್ಯಾಪ್ ದೃಶ್ಯ' : '20 litre can and tap graphic'}>
+      <div className="hero-water__can">
+        <div className="hero-water__cap" aria-hidden />
+        <div className="hero-water__body">
+          <span>20L</span>
+          <small>{isKn ? 'ಶುದ್ಧ ನೀರು' : 'Pure Water'}</small>
+        </div>
+      </div>
+      <div className="hero-water__tap">
+        <svg viewBox="0 0 260 170" role="img" aria-label={isKn ? 'ಗೋಡೆಗೆ ಜೋಡಿಸಿದ ಉಕ್ಕಿನ ಟ್ಯಾಪ್' : 'Wall mounted steel tap'}>
+          <defs>
+            <linearGradient id="tapSteel" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#f6fbff" />
+              <stop offset="35%" stopColor="#c8d2dc" />
+              <stop offset="70%" stopColor="#8f9aa5" />
+              <stop offset="100%" stopColor="#dfe6ed" />
+            </linearGradient>
+          </defs>
+          <rect x="22" y="35" width="44" height="62" rx="8" fill="#77818c" />
+          <rect x="60" y="52" width="120" height="30" rx="12" fill="url(#tapSteel)" />
+          <rect x="142" y="82" width="24" height="35" rx="8" fill="url(#tapSteel)" />
+          <rect x="136" y="108" width="62" height="18" rx="8" fill="url(#tapSteel)" />
+          <circle cx="102" cy="40" r="16" fill="url(#tapSteel)" />
+          <rect x="86" y="35" width="32" height="9" rx="4.5" fill="#7b858f" />
+          <ellipse cx="180" cy="136" rx="8" ry="12" fill="#8de7ff" className="drop d1" />
+          <ellipse cx="195" cy="150" rx="6" ry="9" fill="#7fdcff" className="drop d2" />
+          <ellipse cx="171" cy="152" rx="5" ry="8" fill="#a0ecff" className="drop d3" />
+        </svg>
+      </div>
     </div>
   )
 }
@@ -647,6 +759,7 @@ function App() {
                     <img src={activeLogo} alt="" width="360" height="280" />
                   </div>
                 </div>
+                <HeroWaterShowcase lang={lang} />
                 <a className="hero__slot-note" href={WHATSAPP} target="_blank" rel="noreferrer">
                   {t('hero_slot_note')}
                 </a>
