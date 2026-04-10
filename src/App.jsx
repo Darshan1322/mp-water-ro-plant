@@ -76,7 +76,7 @@ const I18N = {
     launch_chip3_sub: 'ಮನೆ & ಅಂಗಡಿ',
     launch_text_prefix: 'ಮಂಡ್ಯ ನಗರ ಮತ್ತು ಸುತ್ತಮುತ್ತಲ ಗ್ರಾಮಗಳಿಗೆ ಸಂಪೂರ್ಣ ವಿತರಣೆ ಆರಂಭ',
     launch_text_suffix:
-      'ರಲ್ಲಿ. ಈಗಲೇ ವಾಟ್ಸಾಪ್‌ನಲ್ಲಿ ಸಂದೇಶ ಮಾಡಿ — ನಿಮ್ಮ ಸ್ಥಳವನ್ನು ಉಳಿಸಿಕೊಳ್ಳಬಹುದು; ಆರಂಭವಾದ ಕೂಡಲೇ ಸಮಯ ದೃಢಪಡಿಸುತ್ತೇವೆ.',
+      'ರಂದು. ಈಗಲೇ ವಾಟ್ಸಾಪ್‌ನಲ್ಲಿ ಸಂದೇಶ ಮಾಡಿ — ನಿಮ್ಮ ಸ್ಥಳವನ್ನು ಉಳಿಸಿಕೊಳ್ಳಬಹುದು; ಆರಂಭವಾದ ಕೂಡಲೇ ಸಮಯ ದೃಢಪಡಿಸುತ್ತೇವೆ.',
 
     quality_kicker: 'ಘಟಕದ ಗುಣಮಟ್ಟ',
     quality_title: 'ಮೂರು ಭರವಸೆ, ಒಂದು ಸರಬರಾಜು',
@@ -249,7 +249,7 @@ const I18N = {
     launch_chip2_sub: 'Final checks',
     launch_chip3_label: '20L routes',
     launch_chip3_sub: 'Homes & shops',
-    launch_text_prefix: 'Full delivery across Mandya city and nearby villages begins in',
+    launch_text_prefix: 'Full delivery across Mandya city and nearby villages begins on',
     launch_text_suffix:
       ". You can still message us on WhatsApp to save your place — we'll confirm slots as we open.",
 
@@ -445,8 +445,8 @@ const faqItems = [
 
 /** Change to empty string when you are fully live */
 const LAUNCH_WINDOW_LABELS = {
-  kn: '1 ವಾರ',
-  en: 'about 1 week',
+  kn: 'ಈ ಬರುವ ಭಾನುವಾರ, 12 ಏಪ್ರಿಲ್',
+  en: 'this coming Sunday, 12 April',
 }
 
 function getLaunchWindowLabel(lang) {
