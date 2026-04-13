@@ -63,6 +63,28 @@
   border-radius: 12px;
 }
 
+.brand-logo-wrap {
+  position: relative;
+  display: inline-flex;
+}
+
+.brand-logo-drop {
+  position: absolute;
+  right: -3px;
+  bottom: -6px;
+  width: 16px;
+  height: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  filter: drop-shadow(0 2px 5px rgba(8, 169, 204, 0.45));
+}
+
+.brand-logo-drop svg {
+  width: 100%;
+  height: 100%;
+}
+
 .brand-text {
   display: flex;
   flex-direction: column;
@@ -635,10 +657,28 @@
 }
 
 .hero__logo-inner {
+  position: relative;
   background: var(--white);
   border-radius: 26px;
   padding: 28px 32px 24px;
   overflow: hidden;
+}
+
+.hero__logo-drop {
+  position: absolute;
+  right: 16px;
+  top: 12px;
+  width: 46px;
+  height: 58px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  filter: drop-shadow(0 10px 16px rgba(12, 187, 216, 0.35));
+}
+
+.hero__logo-drop svg {
+  width: 100%;
+  height: 100%;
 }
 
 .hero__logo-inner img {

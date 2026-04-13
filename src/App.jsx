@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import './App.css'
 import logoPng from './assets/logo.png'
 import logoKnPng from './assets/logo-kn.png'
@@ -13,8 +13,6 @@ const EMAIL = 'mpwatersupply.mandya@gmail.com'
 const MAILTO = `mailto:${EMAIL}`
 /** Google Maps (shared location) */
 const MAPS_URL = 'https://share.google/JjCXtOMCgUJIdVyXg'
-const LAUNCH_DATE_ISO = '2026-04-12T11:00:00+05:30'
-
 const VIDEO_ITEMS = [
   {
     src: videoCoin,
@@ -47,7 +45,7 @@ const I18N = {
     brand_tagline: 'ಶುದ್ಧ ನೀರು · ಉತ್ತಮ ಆರೋಗ್ಯ',
 
     hero_eyebrow: 'ಮಂಡ್ಯ · 20 ಲೀಟರ್ ಕೆನ್‌ಗಳು · ಆರ್‌ಓ ಘಟಕ',
-    hero_soon: 'ಶೀಘ್ರದಲ್ಲಿ ಆರಂಭ',
+    hero_soon: 'ಈಗ ತೆರೆಯಲಾಗಿದೆ',
     hero_h1_line1: 'ನಂಬಿಕೆಯಿಂದ',
     hero_h1_line2: 'ನಿಮ್ಮ ಮನೆಗೆ ನೀರು.',
     hero_tagline:
@@ -58,25 +56,24 @@ const I18N = {
     hero_cta_order: 'ಆದೇಶಿಸಿ',
     hero_cta_whatsapp: 'ವಾಟ್ಸಾಪ್',
     hero_cta_call: 'ಕರೆ',
-    hero_slot_note: 'ಶೀಘ್ರದಲ್ಲೇ ಆರಂಭ — ವಿತರಣಾ ಪಟ್ಟಿಗೆ ವಾಟ್ಸಾಪ್ ಮಾಡಿ.',
+    hero_slot_note: 'ನಾವು ಈಗ ಆದೇಶಗಳನ್ನು ಸ್ವೀಕರಿಸುತ್ತಿದ್ದೇವೆ — ವಾಟ್ಸಾಪ್‌ನಲ್ಲಿ ಸಂದೇಶ ಮಾಡಿ.',
 
-    launch_ribbon: 'ಶೀಘ್ರ ಆರಂಭ — ಸಿದ್ಧತೆ ನಡೆಯುತ್ತಿದೆ',
+    launch_ribbon: 'ನಾವು ತೆರೆಯಲಾಗಿದೆ — ಈಗಲೇ ಆದೇಶಿಸಿ',
     launch_date_label: 'ಭಾನುವಾರ, 12 ಏಪ್ರಿಲ್',
     launch_countdown_title: 'ಗ್ರ್ಯಾಂಡ್ ಓಪನಿಂಗ್ ಕೌಂಟ್‌ಡೌನ್',
     countdown_days: 'ದಿನ',
     countdown_hours: 'ಗಂ',
     countdown_minutes: 'ನಿಮಿ',
     countdown_seconds: 'ಸೆ',
-    launch_open_now: 'ಇಂದು ನಮ್ಮ ಸೇವೆ ಆರಂಭವಾಗಿದೆ — ಈಗಲೇ ಆದೇಶಿಸಿ!',
-    launch_chip1_label: 'ಆರಂಭ ದಿನ',
-    launch_chip1_sub: 'ಗುರಿ ಸಮಯ',
+    launch_open_now: 'ನಾವು ತೆರೆಯಲಾಗಿದೆ ಮತ್ತು ಈಗ ಆದೇಶಗಳನ್ನು ಸ್ವೀಕರಿಸುತ್ತಿದ್ದೇವೆ.',
+    launch_chip1_label: 'ಸ್ಥಿತಿ',
+    launch_chip1_sub: 'ಈಗ ತೆರೆಯಲಾಗಿದೆ',
     launch_chip2_label: 'ಆರ್‌ಓ ಘಟಕ',
     launch_chip2_sub: 'ಅಂತಿಮ ಪರಿಶೀಲನೆ',
-    launch_chip3_label: '20L ಮಾರ್ಗಗಳು',
+    launch_chip3_label: 'ಆದೇಶಗಳು',
     launch_chip3_sub: 'ಮನೆ & ಅಂಗಡಿ',
-    launch_text_prefix: 'ಮಂಡ್ಯ ನಗರ ಮತ್ತು ಸುತ್ತಮುತ್ತಲ ಗ್ರಾಮಗಳಿಗೆ ಸಂಪೂರ್ಣ ವಿತರಣೆ ಆರಂಭ',
-    launch_text_suffix:
-      'ರಂದು. ಈಗಲೇ ವಾಟ್ಸಾಪ್‌ನಲ್ಲಿ ಸಂದೇಶ ಮಾಡಿ — ನಿಮ್ಮ ಸ್ಥಳವನ್ನು ಉಳಿಸಿಕೊಳ್ಳಬಹುದು; ಆರಂಭವಾದ ಕೂಡಲೇ ಸಮಯ ದೃಢಪಡಿಸುತ್ತೇವೆ.',
+    launch_text_prefix: 'ಮಂಡ್ಯ ನಗರ ಮತ್ತು ಸುತ್ತಮುತ್ತಲ ಗ್ರಾಮಗಳಿಗೆ ನಾವು ಈಗ ಆದೇಶಗಳನ್ನು ಸ್ವೀಕರಿಸುತ್ತಿದ್ದೇವೆ.',
+    launch_text_suffix: 'ವಾಟ್ಸಾಪ್ ಮಾಡಿ ಅಥವಾ ಕರೆ ಮಾಡಿ — ತಕ್ಷಣ ನಿಮ್ಮ ವಿತರಣೆ ಸಮಯವನ್ನು ದೃಢಪಡಿಸುತ್ತೇವೆ.',
 
     quality_kicker: 'ಘಟಕದ ಗುಣಮಟ್ಟ',
     quality_title: 'ಮೂರು ಭರವಸೆ, ಒಂದು ಸರಬರಾಜು',
@@ -222,7 +219,7 @@ const I18N = {
     brand_tagline: 'Purified water supply · Pure health',
 
     hero_eyebrow: 'Mandya · 20 litre cans · RO plant',
-    hero_soon: 'Starting soon',
+    hero_soon: 'Now open',
     hero_h1_line1: 'Water that carries',
     hero_h1_line2: 'your trust home.',
     hero_tagline:
@@ -233,25 +230,25 @@ const I18N = {
     hero_cta_order: 'Order cans',
     hero_cta_whatsapp: 'WhatsApp',
     hero_cta_call: 'Call',
-    hero_slot_note: 'Opening soon — WhatsApp us to get on the delivery list.',
+    hero_slot_note: 'We are taking orders now — WhatsApp us to book delivery.',
 
-    launch_ribbon: "Opening soon — we're starting up",
+    launch_ribbon: "We're open now — place your order",
     launch_date_label: 'Sunday, 12 April',
     launch_countdown_title: 'Grand opening countdown',
     countdown_days: 'days',
     countdown_hours: 'hrs',
     countdown_minutes: 'min',
     countdown_seconds: 'sec',
-    launch_open_now: 'We are open today — place your order now!',
-    launch_chip1_label: 'Target go-live',
-    launch_chip1_sub: 'Timeline',
+    launch_open_now: 'We are open and taking orders now.',
+    launch_chip1_label: 'Status',
+    launch_chip1_sub: 'Now open',
     launch_chip2_label: 'RO plant',
     launch_chip2_sub: 'Final checks',
-    launch_chip3_label: '20L routes',
+    launch_chip3_label: 'Orders',
     launch_chip3_sub: 'Homes & shops',
-    launch_text_prefix: 'Full delivery across Mandya city and nearby villages begins on',
+    launch_text_prefix: 'We are now taking orders across Mandya city and nearby villages.',
     launch_text_suffix:
-      ". You can still message us on WhatsApp to save your place — we'll confirm slots as we open.",
+      "Message us on WhatsApp or call now and we will confirm your delivery slot.",
 
     quality_kicker: 'Inside the plant logic',
     quality_title: 'Three anchors, one pour',
@@ -443,62 +440,8 @@ const faqItems = [
   { qKey: 'faq_q5', aKey: 'faq_a5', kind: 'maps' },
 ]
 
-/** Change to empty string when you are fully live */
-const LAUNCH_WINDOW_LABELS = {
-  kn: 'ಈ ಬರುವ ಭಾನುವಾರ, 12 ಏಪ್ರಿಲ್',
-  en: 'this coming Sunday, 12 April',
-}
-
-function getLaunchWindowLabel(lang) {
-  return LAUNCH_WINDOW_LABELS[lang] || LAUNCH_WINDOW_LABELS.en
-}
-
-function getCountdownParts(targetMs) {
-  const diff = targetMs - Date.now()
-  if (diff <= 0) {
-    return {
-      isOpen: true,
-      days: 0,
-      hours: 0,
-      minutes: 0,
-      seconds: 0,
-    }
-  }
-
-  const totalSeconds = Math.floor(diff / 1000)
-  const days = Math.floor(totalSeconds / 86400)
-  const hours = Math.floor((totalSeconds % 86400) / 3600)
-  const minutes = Math.floor((totalSeconds % 3600) / 60)
-  const seconds = totalSeconds % 60
-
-  return {
-    isOpen: false,
-    days,
-    hours,
-    minutes,
-    seconds,
-  }
-}
-
 function LaunchSoonBanner({ lang }) {
   const t = (key) => getText(lang, key)
-  const launchWindowLabel = getLaunchWindowLabel(lang)
-  const launchTargetMs = new Date(LAUNCH_DATE_ISO).getTime()
-  const [countdown, setCountdown] = useState(() => getCountdownParts(launchTargetMs))
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCountdown(getCountdownParts(launchTargetMs))
-    }, 1000)
-    return () => clearInterval(timer)
-  }, [launchTargetMs])
-
-  const countdownItems = [
-    { value: countdown.days, label: t('countdown_days') },
-    { value: countdown.hours, label: t('countdown_hours') },
-    { value: countdown.minutes, label: t('countdown_minutes') },
-    { value: countdown.seconds, label: t('countdown_seconds') },
-  ]
 
   return (
     <div className="launch-soon" role="status" aria-live="polite">
@@ -509,23 +452,7 @@ function LaunchSoonBanner({ lang }) {
           </span>
           {t('launch_ribbon')}
         </p>
-        <p className="launch-soon__date">{t('launch_date_label')}</p>
-
-        {countdown.isOpen ? (
-          <p className="launch-soon__open">{t('launch_open_now')}</p>
-        ) : (
-          <div className="launch-soon__countdown-wrap">
-            <p className="launch-soon__countdown-title">{t('launch_countdown_title')}</p>
-            <div className="launch-soon__countdown" aria-label={t('launch_countdown_title')}>
-              {countdownItems.map((item) => (
-                <div key={item.label} className="launch-soon__timer-card">
-                  <strong>{String(item.value).padStart(2, '0')}</strong>
-                  <span>{item.label}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
+        <p className="launch-soon__open">{t('launch_open_now')}</p>
 
         <div className="launch-soon__icons">
           <div className="launch-soon__chip">
@@ -536,8 +463,8 @@ function LaunchSoonBanner({ lang }) {
                 <circle cx="12" cy="15" r="1" fill="currentColor" stroke="none" />
               </svg>
             </div>
-            <strong>{launchWindowLabel}</strong>
-            <span>{t('launch_chip1_label')}</span>
+            <strong>{t('launch_chip1_label')}</strong>
+            <span>{t('launch_chip1_sub')}</span>
           </div>
           <div className="launch-soon__chip">
             <div className="launch-soon__chip-icon" aria-hidden>
@@ -562,8 +489,7 @@ function LaunchSoonBanner({ lang }) {
         </div>
 
         <p className="launch-soon__text">
-          {t('launch_text_prefix')} <strong>{launchWindowLabel}</strong>
-          {t('launch_text_suffix')}
+          {t('launch_text_prefix')} {t('launch_text_suffix')}
         </p>
       </div>
     </div>
@@ -673,12 +599,26 @@ function App() {
       <header className="site-header">
         <div className="site-header__inner">
           <a href="#home" className="brand" onClick={closeMenu}>
-            <img
-              src={activeLogo}
-              alt={lang === 'kn' ? 'ಎಂಪಿ ವಾಟರ್ RO ಪ್ಲಾಂಟ್ ಲೋಗೋ' : 'MP Water RO Plant logo'}
-              width="96"
-              height="96"
-            />
+            <div className="brand-logo-wrap">
+              <img
+                src={activeLogo}
+                alt={lang === 'kn' ? 'ಎಂಪಿ ವಾಟರ್ RO ಪ್ಲಾಂಟ್ ಲೋಗೋ' : 'MP Water RO Plant logo'}
+                width="96"
+                height="96"
+              />
+              <span className="brand-logo-drop" aria-hidden>
+                <svg viewBox="0 0 24 24">
+                  <defs>
+                    <linearGradient id="brandDropGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stopColor="#5fe6ff" />
+                      <stop offset="100%" stopColor="#0ea5c6" />
+                    </linearGradient>
+                  </defs>
+                  <path d="M12 2c-4 6-7 8-7 12a7 7 0 0 0 14 0c0-4-3-6-7-12Z" fill="url(#brandDropGradient)" />
+                  <path d="M9.2 8.6c-.9 1.5-1.6 2.8-1.8 4.4" fill="none" stroke="#eaffff" strokeWidth="1.2" strokeLinecap="round" />
+                </svg>
+              </span>
+            </div>
             <div className="brand-text">
               <strong>{t('brand_name')}</strong>
               <span>{t('brand_tagline')}</span>
@@ -756,6 +696,18 @@ function App() {
               <div className="hero__visual-stack">
                 <div className="hero__logo-frame">
                   <div className="hero__logo-inner">
+                    <span className="hero__logo-drop" aria-hidden>
+                      <svg viewBox="0 0 24 24">
+                        <defs>
+                          <linearGradient id="heroDropGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stopColor="#84eeff" />
+                            <stop offset="100%" stopColor="#08a9cc" />
+                          </linearGradient>
+                        </defs>
+                        <path d="M12 2c-4 6-7 8-7 12a7 7 0 0 0 14 0c0-4-3-6-7-12Z" fill="url(#heroDropGradient)" />
+                        <path d="M9.3 8.2c-1.1 1.8-2.1 3.2-2.1 5.2" fill="none" stroke="#f3ffff" strokeWidth="1.4" strokeLinecap="round" />
+                      </svg>
+                    </span>
                     <img src={activeLogo} alt="" width="360" height="280" />
                   </div>
                 </div>
