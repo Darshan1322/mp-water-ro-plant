@@ -15,18 +15,6 @@ const MAILTO = `mailto:${EMAIL}`
 /** Google Maps (shared location) */
 const MAPS_URL = 'https://share.google/JjCXtOMCgUJIdVyXg'
 
-const FONT_THEME_IDS = ['default', 'clarity', 'bloom', 'heritage']
-
-function readStoredFontTheme() {
-  try {
-    const v = localStorage.getItem('mpwater-font-theme')
-    if (FONT_THEME_IDS.includes(v)) return v
-  } catch {
-    /* ignore */
-  }
-  return 'default'
-}
-
 const VIDEO_ITEMS = [
   {
     src: videoCoin,
@@ -54,12 +42,6 @@ const I18N = {
     lang_en: 'English',
     lang_toggle_aria: 'ಭಾಷೆ ಬದಲಾಯಿಸಿ',
     menu_toggle_aria: 'ಮೆನು ತೆರೆಯಿರಿ',
-    font_label: 'ಅಕ್ಷರ ಶೈಲಿ',
-    font_theme_default: 'ಕ್ಲಾಸಿಕ್ (DM + Syne)',
-    font_theme_clarity: 'ಸ್ಪಷ್ಟ (Inter + Sora)',
-    font_theme_bloom: 'ತೇಲುವ (Jakarta + Outfit)',
-    font_theme_heritage: 'ಔಪಚಾರಿಕ (Serif + Lora)',
-
     brand_name: 'ಎಂಪಿ ವಾಟರ್ ಆರ್‌ಓ ಘಟಕ',
     brand_tagline: 'ಶುದ್ಧ ನೀರು · ಉತ್ತಮ ಆರೋಗ್ಯ',
 
@@ -250,12 +232,6 @@ const I18N = {
     lang_en: 'English',
     lang_toggle_aria: 'Toggle language',
     menu_toggle_aria: 'Toggle menu',
-    font_label: 'Font style',
-    font_theme_default: 'Classic (DM Sans + Syne)',
-    font_theme_clarity: 'Clear (Inter + Sora)',
-    font_theme_bloom: 'Bright (Jakarta + Outfit)',
-    font_theme_heritage: 'Formal (Serif + Lora)',
-
     brand_name: 'MP WATER RO PLANT',
     brand_tagline: 'Purified water supply · Pure health',
 
@@ -617,18 +593,8 @@ function App() {
   const [formStatus, setFormStatus] = useState(null)
   const [openFaq, setOpenFaq] = useState(-1)
   const [lang, setLang] = useState('kn')
-  const [fontTheme, setFontTheme] = useState(readStoredFontTheme)
   const [mapPin, setMapPin] = useState(null)
   const areaInputRef = useRef(null)
-
-  useEffect(() => {
-    document.documentElement.setAttribute('data-font-theme', fontTheme)
-    try {
-      localStorage.setItem('mpwater-font-theme', fontTheme)
-    } catch {
-      /* ignore */
-    }
-  }, [fontTheme])
 
   useEffect(() => {
     document.documentElement.lang = lang === 'kn' ? 'kn' : 'en'
@@ -722,20 +688,6 @@ function App() {
                 {lang === 'kn' ? t('lang_en') : t('lang_kn')}
               </button>
             )}
-            <label className="font-theme-label">
-              <span className="font-theme-label__text">{t('font_label')}</span>
-              <select
-                className="font-theme-select"
-                value={fontTheme}
-                onChange={(e) => setFontTheme(e.target.value)}
-                aria-label={t('font_label')}
-              >
-                <option value="default">{t('font_theme_default')}</option>
-                <option value="clarity">{t('font_theme_clarity')}</option>
-                <option value="bloom">{t('font_theme_bloom')}</option>
-                <option value="heritage">{t('font_theme_heritage')}</option>
-              </select>
-            </label>
             <a className="nav-cta" href={PHONE_TEL} onClick={closeMenu}>
               {PHONE_DISPLAY}
             </a>

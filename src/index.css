@@ -21,56 +21,18 @@
   --radius: 16px;
   /* Kannada script (used when <html lang="kn">) */
   --font-kn: 'Noto Sans Kannada', 'Nirmala UI', 'Tunga', system-ui, sans-serif;
-  /* Latin / English fallbacks after the primary webfont */
   --font-en-sans: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  --font-en-serif: Georgia, 'Times New Roman', 'Palatino Linotype', serif;
 }
 
-/*
-  Font themes: <html data-font-theme="default|clarity|bloom|heritage">
-  English (lang="en"): Latin-first stacks — no Kannada font in the main stack.
-  Kannada (lang="kn"): same display fonts + Noto Sans Kannada for script.
-*/
-:root:lang(kn),
-html[data-font-theme='default']:lang(kn) {
+/* Body + headings: DM Sans + Syne; English uses Latin-first stack, Kannada includes Noto. */
+:root:lang(kn) {
   --font: 'DM Sans', var(--font-kn), sans-serif;
   --display: 'Syne', 'DM Sans', var(--font-kn), sans-serif;
 }
 
-:root:lang(en),
-html[data-font-theme='default']:lang(en) {
+:root:lang(en) {
   --font: 'DM Sans', var(--font-en-sans);
   --display: 'Syne', 'DM Sans', var(--font-en-sans);
-}
-
-html[data-font-theme='clarity']:lang(kn) {
-  --font: 'Inter', var(--font-kn), sans-serif;
-  --display: 'Sora', 'Inter', var(--font-kn), sans-serif;
-}
-
-html[data-font-theme='clarity']:lang(en) {
-  --font: 'Inter', var(--font-en-sans);
-  --display: 'Sora', 'Inter', var(--font-en-sans);
-}
-
-html[data-font-theme='bloom']:lang(kn) {
-  --font: 'Plus Jakarta Sans', var(--font-kn), sans-serif;
-  --display: 'Outfit', 'Plus Jakarta Sans', var(--font-kn), sans-serif;
-}
-
-html[data-font-theme='bloom']:lang(en) {
-  --font: 'Plus Jakarta Sans', var(--font-en-sans);
-  --display: 'Outfit', 'Plus Jakarta Sans', var(--font-en-sans);
-}
-
-html[data-font-theme='heritage']:lang(kn) {
-  --font: 'Source Serif 4', var(--font-kn), var(--font-en-serif);
-  --display: 'Lora', 'Source Serif 4', var(--font-kn), var(--font-en-serif);
-}
-
-html[data-font-theme='heritage']:lang(en) {
-  --font: 'Source Serif 4', var(--font-en-serif);
-  --display: 'Lora', 'Source Serif 4', var(--font-en-serif);
 }
 
 html {
