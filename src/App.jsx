@@ -1,5 +1,6 @@
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import './App.css'
+import LocationMapPicker from './LocationMapPicker.jsx'
 import logoPng from './assets/logo.png'
 import logoKnPng from './assets/logo-kn.png'
 import videoCoin from './assets/videos/promo-coin-delivery.mp4'
@@ -161,6 +162,20 @@ const I18N = {
     note_label: 'ಟಿಪ್ಪಣಿ (ಐಚ್ಛಿಕ)',
     note_placeholder: 'ಸಮಯ, ಬಾಗಿಲು, ಮಹಡಿ…',
     submit_btn: 'ವಾಟ್ಸಾಪ್ ಸಂದೇಶ ತಯಾರಿಸಿ',
+
+    map_pick_title: 'ನಕ್ಷೆಯಲ್ಲಿ ಹುಡುಕಿ / ಪಿನ್ ಮಾಡಿ',
+    map_pick_hint:
+      'ಗ್ರಾಮ, ಪ್ರದೇಶ ಅಥವಾ ಗುರುತುಸ್ಥಳ ಹುಡುಕಿ. ಫಲಿತಾಂಶ ಆಯ್ಕೆಮಾಡಿ ಅಥವಾ ಪಿನ್ ಅನ್ನು ಎಳೆದು ನಿಮ್ಮ ಮನೆಯ ಸಮೀಪಕ್ಕೆ ಇಡಿ. ವಾಟ್ಸಾಪ್ ಸಂದೇಶದಲ್ಲಿ ನಕ್ಷೆ ಲಿಂಕ್ ಸೇರಿಸಲಾಗುತ್ತದೆ.',
+    map_search_placeholder: 'ಉದಾ: ಮಂಡ್ಯ, ನಿಮ್ಮ ಗ್ರಾಮ, ಲ್ಯಾಂಡ್ಮಾರ್ಕ್…',
+    map_search_btn: 'ಹುಡುಕಿ',
+    map_search_loading: 'ಹುಡುಕಾಟ…',
+    map_no_results: 'ಫಲಿತಾಂಶಗಳಿಲ್ಲ — ಬೇರೆ ಪದ ಪ್ರಯತ್ನಿಸಿ.',
+    map_selected_prefix: 'ಆಯ್ಕೆ:',
+    map_apply_area: 'ವಿಳಾಸ ಕ್ಷೇತ್ರಕ್ಕೆ ಸೇರಿಸಿ',
+    map_open_maps: 'ಗೂಗಲ್ ನಕ್ಷೆ ತೆರೆಯಿರಿ',
+    map_drag_hint: 'ಪಿನ್ ಅನ್ನು ಎಳೆದು ಸರಿಯಾದ ಸ್ಥಳಕ್ಕೆ ಇಡಬಹುದು.',
+    map_error: 'ಹುಡುಕಾಟ ವಿಫಲವಾಗಿದೆ. ಸ್ವಲ್ಪ ನಂತರ ಪ್ರಯತ್ನಿಸಿ.',
+    map_results_label: 'ಹುಡುಕಾಟ ಫಲಿತಾಂಶಗಳು',
 
     quality_tag1: 'ಶುದ್ಧೀಕರಣ',
     quality_title1: 'ಆರ್‌ಓ ಶುದ್ಧೀಕರಣ',
@@ -337,6 +352,20 @@ const I18N = {
     note_label: 'Notes (optional)',
     note_placeholder: 'Time window, floor, gate…',
     submit_btn: 'Compose WhatsApp order',
+
+    map_pick_title: 'Find your location on the map',
+    map_pick_hint:
+      'Search your village or landmark, pick a result, then drag the pin if needed. A Google Maps link is added to your WhatsApp order.',
+    map_search_placeholder: 'e.g. Mandya, your village, landmark…',
+    map_search_btn: 'Search',
+    map_search_loading: 'Searching…',
+    map_no_results: 'No results — try different words.',
+    map_selected_prefix: 'Selected:',
+    map_apply_area: 'Copy into address field',
+    map_open_maps: 'Open in Google Maps',
+    map_drag_hint: 'You can drag the pin to fine-tune the spot.',
+    map_error: 'Search failed. Please try again in a moment.',
+    map_results_label: 'Search results',
 
     /* Quality cards */
     quality_tag1: 'Filtration',
@@ -559,6 +588,8 @@ function App() {
   const [formStatus, setFormStatus] = useState(null)
   const [openFaq, setOpenFaq] = useState(-1)
   const [lang, setLang] = useState('kn')
+  const [mapPin, setMapPin] = useState(null)
+  const areaInputRef = useRef(null)
 
   const closeMenu = () => setMenuOpen(false)
   const t = (key) => getText(lang, key)
@@ -575,6 +606,10 @@ function App() {
     const qty = form.quantity.value
     const area = form.area.value.trim()
     const note = form.note.value.trim()
+    const mapLine =
+      mapPin != null
+        ? `Map pin: https://www.google.com/maps?q=${mapPin.lat},${mapPin.lng}${mapPin.label ? `\n(${mapPin.label})` : ''}`
+        : ''
 
     const text = [
       'Hello MP Water RO Plant,',
@@ -584,6 +619,7 @@ function App() {
       `My phone: ${phone}`,
       `Number of cans: ${qty}`,
       `Delivery area: ${area}`,
+      mapLine,
       note ? `Notes: ${note}` : '',
     ]
       .filter(Boolean)
@@ -592,6 +628,7 @@ function App() {
     window.open(`${WHATSAPP}?text=${encodeURIComponent(text)}`, '_blank', 'noopener,noreferrer')
     setFormStatus('opened')
     form.reset()
+    setMapPin(null)
   }
 
   return (
@@ -607,16 +644,7 @@ function App() {
                 height="96"
               />
               <span className="brand-logo-drop" aria-hidden>
-                <svg viewBox="0 0 24 24">
-                  <defs>
-                    <linearGradient id="brandDropGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                      <stop offset="0%" stopColor="#5fe6ff" />
-                      <stop offset="100%" stopColor="#0ea5c6" />
-                    </linearGradient>
-                  </defs>
-                  <path d="M12 2c-4 6-7 8-7 12a7 7 0 0 0 14 0c0-4-3-6-7-12Z" fill="url(#brandDropGradient)" />
-                  <path d="M9.2 8.6c-.9 1.5-1.6 2.8-1.8 4.4" fill="none" stroke="#eaffff" strokeWidth="1.2" strokeLinecap="round" />
-                </svg>
+                <img src={activeLogo} alt="" />
               </span>
             </div>
             <div className="brand-text">
@@ -697,16 +725,7 @@ function App() {
                 <div className="hero__logo-frame">
                   <div className="hero__logo-inner">
                     <span className="hero__logo-drop" aria-hidden>
-                      <svg viewBox="0 0 24 24">
-                        <defs>
-                          <linearGradient id="heroDropGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" stopColor="#84eeff" />
-                            <stop offset="100%" stopColor="#08a9cc" />
-                          </linearGradient>
-                        </defs>
-                        <path d="M12 2c-4 6-7 8-7 12a7 7 0 0 0 14 0c0-4-3-6-7-12Z" fill="url(#heroDropGradient)" />
-                        <path d="M9.3 8.2c-1.1 1.8-2.1 3.2-2.1 5.2" fill="none" stroke="#f3ffff" strokeWidth="1.4" strokeLinecap="round" />
-                      </svg>
+                      <img src={activeLogo} alt="" />
                     </span>
                     <img src={activeLogo} alt="" width="360" height="280" />
                   </div>
@@ -949,7 +968,22 @@ function App() {
                 />
 
                 <label htmlFor="area">{t('area_label')}</label>
-                <input id="area" name="area" type="text" required placeholder={lang === 'kn' ? 'ಮಂಡ್ಯ — …' : 'Mandya — …'} />
+                <input
+                  id="area"
+                  ref={areaInputRef}
+                  name="area"
+                  type="text"
+                  required
+                  placeholder={lang === 'kn' ? 'ಮಂಡ್ಯ — …' : 'Mandya — …'}
+                />
+
+                <LocationMapPicker
+                  lang={lang}
+                  t={t}
+                  mapPin={mapPin}
+                  onMapPinChange={setMapPin}
+                  areaInputRef={areaInputRef}
+                />
 
                 <label htmlFor="note">{t('note_label')}</label>
                 <textarea id="note" name="note" placeholder={t('note_placeholder')} />
