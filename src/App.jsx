@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import './App.css'
 import LocationMapPicker from './LocationMapPicker.jsx'
 import logoPng from './assets/logo.png'
@@ -14,6 +14,19 @@ const EMAIL = 'mpwatersupply.mandya@gmail.com'
 const MAILTO = `mailto:${EMAIL}`
 /** Google Maps (shared location) */
 const MAPS_URL = 'https://share.google/JjCXtOMCgUJIdVyXg'
+
+const FONT_THEME_IDS = ['default', 'clarity', 'bloom', 'heritage']
+
+function readStoredFontTheme() {
+  try {
+    const v = localStorage.getItem('mpwater-font-theme')
+    if (FONT_THEME_IDS.includes(v)) return v
+  } catch {
+    /* ignore */
+  }
+  return 'default'
+}
+
 const VIDEO_ITEMS = [
   {
     src: videoCoin,
@@ -41,6 +54,11 @@ const I18N = {
     lang_en: 'English',
     lang_toggle_aria: 'ಭಾಷೆ ಬದಲಾಯಿಸಿ',
     menu_toggle_aria: 'ಮೆನು ತೆರೆಯಿರಿ',
+    font_label: 'ಅಕ್ಷರ ಶೈಲಿ',
+    font_theme_default: 'ಕ್ಲಾಸಿಕ್ (DM + Syne)',
+    font_theme_clarity: 'ಸ್ಪಷ್ಟ (Inter + Sora)',
+    font_theme_bloom: 'ತೇಲುವ (Jakarta + Outfit)',
+    font_theme_heritage: 'ಔಪಚಾರಿಕ (Serif + Lora)',
 
     brand_name: 'ಎಂಪಿ ವಾಟರ್ ಆರ್‌ಓ ಘಟಕ',
     brand_tagline: 'ಶುದ್ಧ ನೀರು · ಉತ್ತಮ ಆರೋಗ್ಯ',
@@ -145,6 +163,9 @@ const I18N = {
     side_location: 'ಸ್ಥಳ',
     side_maps: 'ಗೂಗಲ್ ನಕ್ಷೆಗಳು — ದಿಕ್ಕು',
 
+    contact_side_footer_line1: 'ಶುದ್ಧ ನೀರು · ಸೀಲ್ಡ್ 20L · ಮಂಡ್ಯ ಪ್ರದೇಶ ವಿತರಣೆ',
+    contact_side_footer_line2: 'ನೇರ ಸಂಪರ್ಕ — ಆದೇಶಕ್ಕೆ ತ್ವರಿತ ಉತ್ತರ',
+
     footer_jump: 'ಲಿಂಕ್‌ಗಳು',
     footer_contact: 'ಸಂಪರ್ಕ',
     footer_follow: 'ಅನುಸರಿಸಿ',
@@ -229,6 +250,11 @@ const I18N = {
     lang_en: 'English',
     lang_toggle_aria: 'Toggle language',
     menu_toggle_aria: 'Toggle menu',
+    font_label: 'Font style',
+    font_theme_default: 'Classic (DM Sans + Syne)',
+    font_theme_clarity: 'Clear (Inter + Sora)',
+    font_theme_bloom: 'Bright (Jakarta + Outfit)',
+    font_theme_heritage: 'Formal (Serif + Lora)',
 
     brand_name: 'MP WATER RO PLANT',
     brand_tagline: 'Purified water supply · Pure health',
@@ -333,6 +359,9 @@ const I18N = {
     side_email: 'Email',
     side_location: 'Location',
     side_maps: 'Google Maps — directions',
+
+    contact_side_footer_line1: 'Purified water · sealed 20L · Mandya-area delivery',
+    contact_side_footer_line2: 'Talk to us directly — quick replies to your order',
 
     footer_jump: 'Jump',
     footer_contact: 'Contact',
@@ -588,8 +617,22 @@ function App() {
   const [formStatus, setFormStatus] = useState(null)
   const [openFaq, setOpenFaq] = useState(-1)
   const [lang, setLang] = useState('kn')
+  const [fontTheme, setFontTheme] = useState(readStoredFontTheme)
   const [mapPin, setMapPin] = useState(null)
   const areaInputRef = useRef(null)
+
+  useEffect(() => {
+    document.documentElement.setAttribute('data-font-theme', fontTheme)
+    try {
+      localStorage.setItem('mpwater-font-theme', fontTheme)
+    } catch {
+      /* ignore */
+    }
+  }, [fontTheme])
+
+  useEffect(() => {
+    document.documentElement.lang = lang === 'kn' ? 'kn' : 'en'
+  }, [lang])
 
   const closeMenu = () => setMenuOpen(false)
   const t = (key) => getText(lang, key)
@@ -679,6 +722,20 @@ function App() {
                 {lang === 'kn' ? t('lang_en') : t('lang_kn')}
               </button>
             )}
+            <label className="font-theme-label">
+              <span className="font-theme-label__text">{t('font_label')}</span>
+              <select
+                className="font-theme-select"
+                value={fontTheme}
+                onChange={(e) => setFontTheme(e.target.value)}
+                aria-label={t('font_label')}
+              >
+                <option value="default">{t('font_theme_default')}</option>
+                <option value="clarity">{t('font_theme_clarity')}</option>
+                <option value="bloom">{t('font_theme_bloom')}</option>
+                <option value="heritage">{t('font_theme_heritage')}</option>
+              </select>
+            </label>
             <a className="nav-cta" href={PHONE_TEL} onClick={closeMenu}>
               {PHONE_DISPLAY}
             </a>
@@ -939,7 +996,7 @@ function App() {
           </div>
         </section>
 
-        <section className="section" id="contact" style={{ paddingBottom: 100 }}>
+        <section className="section section--contact" id="contact">
           <div className="section__inner">
             <p className="section-kicker">{t('contact_kicker')}</p>
             <h2 className="section-title">{t('contact_title')}</h2>
@@ -1030,6 +1087,23 @@ function App() {
                     {t('side_maps')}
                   </a>
                 </p>
+
+                <div className="contact-side__panel">
+                  <div className="contact-side__drops" aria-hidden>
+                    <span className="contact-side__drop" />
+                    <span className="contact-side__drop" />
+                    <span className="contact-side__drop" />
+                  </div>
+                  <p className="contact-side__footer-line">{t('contact_side_footer_line1')}</p>
+                  <p className="contact-side__footer-line contact-side__footer-line--muted">
+                    {t('contact_side_footer_line2')}
+                  </p>
+                  <div className="contact-side__chips">
+                    <span className="contact-side__chip">20L</span>
+                    <span className="contact-side__chip">{t('hero_badge1')}</span>
+                    <span className="contact-side__chip">{t('hero_badge2')}</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
